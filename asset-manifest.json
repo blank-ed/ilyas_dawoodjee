@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ilyas_dawoodjee/static/css/main.a240c550.css",
+    "main.js": "/ilyas_dawoodjee/static/js/main.bf2f3ae3.js",
+    "index.html": "/ilyas_dawoodjee/index.html",
+    "main.a240c550.css.map": "/ilyas_dawoodjee/static/css/main.a240c550.css.map",
+    "main.bf2f3ae3.js.map": "/ilyas_dawoodjee/static/js/main.bf2f3ae3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a240c550.css",
+    "static/js/main.bf2f3ae3.js"
+  ]
+}
