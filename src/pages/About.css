@@ -1,0 +1,33 @@
+.About {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.About .About_Container {
+    padding: 2.5rem 0rem 0rem 0rem;
+    width: 52%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.About .About_Container .About_Avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.About .About_Container .About_Avatar img {
+    width: 250px;
+    height: 250px;
+    border-radius: 1rem;
+}
+
+.About .About_Container .About_Avatar p {
+    font-size: 1rem;
+    color: rgb(180, 180, 180);
+}

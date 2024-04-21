@@ -1,0 +1,19 @@
+.Footer {
+    background-color: #252627;
+    margin-top: auto;
+}
+
+.Footer_Sub {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.Footer_Sub p {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: lightgray;
+    font-size: 1rem;
+}

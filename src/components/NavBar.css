@@ -1,0 +1,41 @@
+.NavBar {
+    background-color: #252627;
+}
+
+.NavBar_Sub {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.NavBar_Sub .NavBar_left > * {
+    margin: 0 1rem;
+    color: lightgray;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.NavBar_Sub .NavBar_right {
+    display: flex;
+    align-items: center;
+}
+
+.NavBar_Sub .NavBar_right > * {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: lightgray;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.NavBar_Sub .NavBar_left > *:hover,
+.NavBar_Sub .NavBar_right > *:hover {
+    color: rgb(75, 150, 0);;
+}
+
+.selected {
+    color: rgb(75, 150, 0) !important;
+    font-weight: 900;
+}

@@ -1,4 +1,48 @@
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: lightgray;
+}
+
+/* dark mode user-agent-styles */
+
+html {
+  background-color: #212121;
+}
+
+/* min body height */
+
+body {
+  min-height: 100vh;
+  font-family: "Philosopher", sans-serif;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  font-size: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.5;
+  color: white;
 }
