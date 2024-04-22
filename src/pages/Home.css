@@ -28,7 +28,6 @@
 .Home .Home_Container .Home_Profile .Home_Avatar img {
     width: 150px;
     height: 150px;
-    border-radius: 1rem;
     transition: transform 0.5s;
 }
 
