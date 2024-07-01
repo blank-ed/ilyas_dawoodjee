@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
-    padding: .5rem 1rem;
+    padding: .75rem 1rem;
     background-color: rgb(36, 41, 53);
 }
 
@@ -94,6 +94,12 @@
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information ul {
     margin-left: 0.5rem;
     list-style: inside;
+    text-indent: -20px;
+    padding-left: 20px;
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information li:not(:last-child) {
+    margin-bottom: 0.25rem;
 }
 
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information a {

@@ -140,3 +140,31 @@
 .Home .Home_Container .article .article_footer>*:first-child:hover {
     color: var(--lighter-hover-color);
 }
+
+/* For Page Navigation Features */
+
+.Home .Home_Container .Home_pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.Home .Home_Container .Home_pagination > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home .Home_Container .Home_pagination button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.Home .Home_Container .Home_pagination .one_page {
+    display: none;
+}
+
+.Home .Home_Container .Home_pagination .multiple_pages {
+    display: block;
+}

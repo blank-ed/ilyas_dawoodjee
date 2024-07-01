@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faFolderOpen, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faTag } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft, faTag } from '@fortawesome/free-solid-svg-icons';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -13,6 +13,36 @@ import MyImage from '../components/website_data/me.jpg'
 import BlogData from '../components/website_data/BlogData';
 
 function Home() {
+  const postsPerPage = 3;
+  // Initialize currentPage directly from localStorage, default to 1 if not found
+  const [currentPage, setCurrentPage] = useState(parseInt(localStorage.getItem('currentPage')) || 1);
+
+  const setCurrentPageWithStorage = (page) => {
+    localStorage.setItem('currentPage', page.toString());
+    setCurrentPage(page);
+  };
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = BlogData.slice(indexOfFirstPost, indexOfLastPost);
+
+  const totalPages = Math.ceil(BlogData.length / postsPerPage);
+
+  const nextPage = () => {
+    setCurrentPageWithStorage(currentPage < totalPages ? currentPage + 1 : currentPage);
+  };
+
+  const prevPage = () => {
+    setCurrentPageWithStorage(currentPage > 1 ? currentPage - 1 : currentPage);
+  };
+
+  useEffect(() => {
+    const firstPostElement = document.querySelector('.article');
+    if (firstPostElement) {
+      firstPostElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [currentPage]);
+
   return (
     <div className='Home'>
       <NavBar></NavBar>
@@ -24,7 +54,7 @@ function Home() {
             </Link>
           </div>
           <div className="Home_Subtitle">
-            <p>Computer Vision | Machine Learning | Deep Learning | Robotics | Digital Signal Processing | Data Science </p>
+            <p>Computer Vision | Machine Learning | Deep Learning <br />Robotics | Digital Signal Processing | Data Science </p>
           </div>
           <div className="Home_Links">
             <a href="https://www.linkedin.com/in/ilyas-dawoodjee-858011195" target='_blank'><FontAwesomeIcon className='Links' icon={faLinkedin} /></a>
@@ -36,7 +66,7 @@ function Home() {
             <p>Ilyas Dawoodjee - Personal Portfolio Homepage</p>
           </div>
         </div>
-        {BlogData.map((data, index) => (
+        {currentPosts.map((data, index) => (
           <div className="article" key={index}>
             <div className="article_image">
               <Link to={data.article_link}><img src={data.image} alt="" /></Link>
@@ -62,6 +92,11 @@ function Home() {
             </div>
           </div>
         ))}
+        <div className="Home_pagination">
+          <button className={totalPages === 1 ? "one_page" : "multiple_pages"} onClick={prevPage} disabled={currentPage === 1}><FontAwesomeIcon className='arrow_icon' icon={faArrowLeft} /></button>
+          <span>Page {currentPage} of {totalPages}</span>
+          <button className={totalPages === 1 ? "one_page" : "multiple_pages"} onClick={nextPage} disabled={currentPage === totalPages}><FontAwesomeIcon className='arrow_icon' icon={faArrowRight} /></button>
+        </div>
       </div>
       <Footer ishomePage="yes"></Footer>
     </div>
