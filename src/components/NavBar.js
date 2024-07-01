@@ -12,7 +12,7 @@ function NavBar({ selected }) {
         <div className='NavBar_right'>
           <Link to="/about" className={selected === "about" ? "selected" : ""}>About</Link>
           <Link to="/projects" className={selected === "projects" ? "selected" : ""}>Projects</Link>
-          <Link to="/resume" className={selected === "resume" ? "selected" : ""}>Resume</Link>
+          {/* <Link to="/resume" className={selected === "resume" ? "selected" : ""}>Resume</Link> */}
           <Link to="/blog" className={selected === "blog" ? "selected" : ""}>Blog</Link>
         </div>
       </div>

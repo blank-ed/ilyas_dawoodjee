@@ -1,23 +1,40 @@
-.Home {
+:root {
+    /*  */
+    --gap-section: 2.5rem; /* Gap between each section */
+    --main-margin: 2.5rem; /* Top and bottom margin */
+    --content-width: 50%; /* Width of the content */
+    --gap-body: 1rem; /* Gap for the profile data and profile links and article footer */
+    --user-image-size: 200px; /* Size of the user image */
+    --profile-font-size-paragraph: 1.25rem; /* Font size for profile paragraphs */
+    --hover-color: rgb(75, 150, 0); /* Hover color */
+    --lighter-hover-color: rgb(100, 200, 0); /* Lighter hover color eg. "Read More" text */
+    --shade-color: rgb(158, 158, 158); /* Shade color eg. Disclaimer Text */
+    --article-image-padding: 1rem; /* Top and bottom padding of the article image */
+    --article-title-font-size: 1.5rem; /* Article title font size */
+    --article-text-font-size: 1rem; /* Article body font size */
+    --article-text-padding-bottom: 0.75rem; /* Bottom padding between the article texts */
+    --article-end-padding-bottom: 2.5rem; /* Bottom padding at the end of the article */
+}
+
+.Home,
+.Home .Home_Container,
+.Home .Home_Container .Home_Profile {
     display: flex;
     flex-direction: column;
+}
+
+.Home {
     min-height: 100vh;
 }
 
 .Home .Home_Container {
-    padding: 2.5rem 0rem 0rem 0rem;
-    width: 52%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    width: var(--content-width);
+    margin: var(--main-margin) auto;
+    gap: var(--gap-section);
 }
 
 .Home .Home_Container .Home_Profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+    gap: var(--gap-body);
 }
 
 .Home .Home_Container .Home_Profile>* {
@@ -26,8 +43,8 @@
 }
 
 .Home .Home_Container .Home_Profile .Home_Avatar img {
-    width: 150px;
-    height: 150px;
+    width: var(--user-image-size);
+    height: var(--user-image-size);
     transition: transform 0.5s;
 }
 
@@ -37,43 +54,34 @@
 
 .Home .Home_Container .Home_Profile .Home_Subtitle p,
 .Home .Home_Container .Home_Profile .Home_Disclaimer p {
-    font-size: 1.25rem;
+    font-size: var(--profile-font-size-paragraph);
     text-align: center;
 }
 
 .Home .Home_Container .Home_Profile .Home_Links {
     display: flex;
-    gap: 1rem;
-}
-
-.Home .Home_Container .Home_Profile .Home_Links a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    display: inline-block;
+    gap: var(--gap-body);
+    font-size: var(--profile-font-size-paragraph);
 }
 
 .Home .Home_Container .Home_Profile .Home_Links a:hover svg path {
-    color: rgb(75, 150, 0);
-    ;
+    color: var(--hover-color);
 }
 
 .Home .Home_Container .Home_Profile .Home_Disclaimer p {
-    color: rgb(180, 180, 180);
+    color: var(--shade-color);
 }
 
 /* For Each Article Post */
 
 .Home .Home_Container .article .article_image {
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: var(--article-image-padding);
     cursor: pointer;
 }
 
 .Home .Home_Container .article .article_image img {
-    transition: scale 1s;
-    border-radius: 2rem;
+    transition: scale 0.5s;
 }
 
 .Home .Home_Container .article .article_image img:hover {
@@ -81,58 +89,54 @@
 }
 
 .Home .Home_Container .article .article_title h1 {
-    font-size: 1.5rem;
     font-weight: bold;
-    padding-bottom: 0.75rem;
+    font-size: var(--article-title-font-size);
+    padding-bottom: var(--article-text-padding-bottom);
 }
 
 .Home .Home_Container .article .article_title h1 a:hover {
-    color: rgb(75, 150, 0);
+    color: var(--hover-color);
 }
 
 .Home .Home_Container .article .article_subtitle {
-    padding-bottom: 0.75rem;
-}
-
-.Home .Home_Container .article .article_subtitle p {
-    display: flex;
-    align-items: end;
+    padding-bottom: var(--article-text-padding-bottom);
 }
 
 .Home .Home_Container .article .article_subtitle .article_icon,
 .Home .Home_Container .article .article_subtitle .article_icon_link {
-    font-size: 1.1rem;
+    font-size: var(--article-text-font-size);
+    font-weight: bold;
 }
 
 .Home .Home_Container .article .article_subtitle .article_icon_link:hover,
 .Home .Home_Container .article .article_subtitle .article_icon_link:hover svg path {
-    color: rgb(75, 150, 0);
+    color: var(--hover-color);
 }
 
 .Home .Home_Container .article .article_subtitle .article_icon_text {
-    font-size: 0.875rem;
-    color: rgb(180, 180, 180);
+    font-size: var(--article-text-font-size);
+    color: var(--shade-color);
 }
 
 .Home .Home_Container .article .article_abstract p {
-    color: rgb(180, 180, 180);
+    color: var(--shade-color);
+    padding-bottom: var(--article-text-padding-bottom);
 }
 
 .Home .Home_Container .article .article_footer {
     display: flex;
     justify-content: space-between;
-    padding: 0.75rem 0rem 2.5rem 0rem;
+    align-items: center;
+    gap: var(--gap-body);
     border-bottom: 2px solid gray;
+    padding-bottom: var(--article-end-padding-bottom);
 }
 
-.Home .Home_Container .article .article_footer>*:first-child {
-    color: rgb(75, 150, 0);
+.Home .Home_Container .article .article_footer>*:first-child,
+.Home .Home_Container .article .article_footer p a:hover {
+    color: var(--hover-color);
 }
 
 .Home .Home_Container .article .article_footer>*:first-child:hover {
-    color: rgb(100, 200, 0);
-}
-
-.Home .Home_Container .article .article_footer p a:hover {
-    color: rgb(75, 150, 0);
+    color: var(--lighter-hover-color);
 }

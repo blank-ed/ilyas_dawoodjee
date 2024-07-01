@@ -1,19 +1,39 @@
 .Footer {
-    background-color: #252627;
     margin-top: auto;
 }
 
-.Footer_Sub {
+.Footer .Footer_Sub {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 1rem;
     padding: 1rem;
     width: 80%;
     margin: 0 auto;
 }
 
-.Footer_Sub p {
+.Footer .Footer_Sub p {
     margin: 0 1rem;
     text-decoration: none;
     color: lightgray;
     font-size: 1rem;
+}
+
+.Footer .Footer_Sub .homePage {
+    display: none;
+}
+
+.Footer .Footer_Sub .notHomePage {
+    display: block;
+}
+
+.Footer .Footer_Sub .Footer_Links {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.Footer .Footer_Sub .Footer_Links a:hover svg path {
+    color: rgb(75, 150, 0);
 }

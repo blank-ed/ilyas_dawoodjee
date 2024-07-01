@@ -6,7 +6,7 @@
 
 .About .About_Container {
     padding: 2.5rem 0rem 0rem 0rem;
-    width: 52%;
+    width: 50%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -30,4 +30,76 @@
 .About .About_Container .About_Avatar p {
     font-size: 1rem;
     color: rgb(180, 180, 180);
+    line-height: 1.25;
+}
+
+.About .About_Container .About_Main_Section {
+    display: flex;
+    flex-direction: column;
+}
+
+.About .About_Container .About_Main_Section .About_Main_Section_Title {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.About .About_Container .About_Main_Section .About_Main_Section_Title svg path {
+    color: rgb(75, 150, 0);
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: .5rem 1rem;
+    background-color: rgb(36, 41, 53);
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Header .Each_Section_Title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Header .Each_Section_Date {
+    font-size: 0.75rem;
+    color: rgb(158, 158, 158);
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_SubHeader {
+    font-size: 0.9rem;
+    padding-bottom: 0.75rem;
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_SubHeader a {
+    color: rgb(75, 150, 0);
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_SubHeader a:hover {
+    color: rgb(100, 200, 0);
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information {
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information ul {
+    margin-left: 0.5rem;
+    list-style: inside;
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information a {
+    color: rgb(75, 150, 0);
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information a:hover {
+    color: rgb(100, 200, 0);
 }

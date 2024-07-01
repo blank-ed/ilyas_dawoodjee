@@ -24,7 +24,7 @@ function Home() {
             </Link>
           </div>
           <div className="Home_Subtitle">
-            <p>Computer Vision | ML | Robotics | Digital Signal Processing | Data Science </p>
+            <p>Computer Vision | Machine Learning | Deep Learning | Robotics | Digital Signal Processing | Data Science </p>
           </div>
           <div className="Home_Links">
             <a href="https://www.linkedin.com/in/ilyas-dawoodjee-858011195" target='_blank'><FontAwesomeIcon className='Links' icon={faLinkedin} /></a>
@@ -45,7 +45,9 @@ function Home() {
               <h1><Link to={data.article_link}>{data.article_title}</Link></h1>
             </div>
             <div className="article_subtitle">
-              <p><Link className='article_icon_link' to="/about"><FontAwesomeIcon className='article_icon' icon={faUser} /> Ilyas Dawoodjee</Link> <span className='article_icon_text'>&nbsp;&nbsp;published on {data.published_date} included in&nbsp;&nbsp;</span> <Link className='article_icon_link' to={data.published_folder}><FontAwesomeIcon className='Links' icon={faFolderOpen} /> {data.folder_name}</Link></p>
+              <span className='article_icon_text'>Published on {data.published_date} included in</span>
+              &nbsp;
+              <span><Link className='article_icon_link' to={data.published_folder}><FontAwesomeIcon className='Links' icon={faFolderOpen} /> {data.folder_name}</Link></span>
             </div>
             <div className="article_abstract">
               <p>{data.article_abstract}</p>
@@ -61,7 +63,7 @@ function Home() {
           </div>
         ))}
       </div>
-      <Footer></Footer>
+      <Footer ishomePage="yes"></Footer>
     </div>
   )
 }
