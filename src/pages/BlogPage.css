@@ -1,0 +1,133 @@
+/* 
+
+- I have warning, information, question
+
+Need to Design:
+- code layout
+- in body code layout
+
+- sub-title text
+
+*/
+
+:root {
+    /*  */
+    --main-margin: 2.5rem; /* Top and bottom margin */
+    --content-width: 60%; /* Width of the content */
+
+    --mainTitle-font-size: 2rem; /* Font size for the main page title */
+    --sectionTitle-font-size: 1.75rem; /* Font size for each section title */
+    --subSectionTitle-font-size: 1.4rem; /* Font size for each sub section title */
+    --body-text-font-size: 1rem; /* Font size for the body text */
+    --code-font-size: 0.8rem; /* Font size for the code text */
+    --sub-body-text-font-size: 0.75rem; /* Font size for the sub body text */
+
+    --hover-color: rgb(75, 150, 0); /* Hover color */
+    --lighter-hover-color: rgb(100, 200, 0); /* Lighter hover color */
+    --shade-color: rgb(158, 158, 158); /* Shade color eg. Disclaimer Text */
+    --code-background-color: rgba(44, 71, 114, 0.3);
+    --code-color: #ffa17a;
+
+    --ul-text-indent-and-padding-left: 20px;
+}
+
+
+/* General formatting for the whole page */
+
+.BlogPage .BlogPage_Container .blog_links,
+.BlogPage .BlogPage_Container .blog_links sup,
+.BlogPage .BlogPage_Container .blog_links svg path {
+    color: var(--hover-color);
+}
+
+.BlogPage .BlogPage_Container .blog_links:hover,
+.BlogPage .BlogPage_Container .blog_links sup:hover,
+.BlogPage .BlogPage_Container .blog_links:hover svg path {
+    color: var(--lighter-hover-color);
+}
+
+.BlogPage .BlogPage_Container .body {
+    font-size: var(--body-text-font-size);
+    line-height: 1.5;
+    text-align: justify;
+    display: inline-block;
+    margin: 0.5rem 0rem;
+}
+
+.BlogPage .BlogPage_Container .sub-body {
+    font-size: var(--sub-body-text-font-size);
+}
+
+.BlogPage .BlogPage_Container .sectionIcon svg path {
+    color: var(--hover-color);
+}
+
+.BlogPage .BlogPage_Container .subSection svg path {
+    transform: rotate(90deg);
+    transform-origin: center; 
+}
+
+.BlogPage .BlogPage_Container .section_title {
+    font-size: var(--sectionTitle-font-size);
+    display: inline-block;
+    margin: 0.75rem 0rem 0.25rem 0rem;
+    font-weight: bold;
+}
+
+.BlogPage .BlogPage_Container strong {
+    font-weight: bold;
+}
+
+.BlogPage .BlogPage_Container .code {
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    font-size: var(--code-font-size);
+    padding: 0.3rem 0.4rem;
+    letter-spacing: 0.4;
+    border-radius: 0.25rem;
+}
+
+.BlogPage .BlogPage_Container .subSection_title {
+    font-size: var(--subSectionTitle-font-size);
+    font-weight: bold;
+    margin: 1rem 0rem 0.5rem 0rem;
+    display: inline-block;
+}
+
+/* Formatting for the rest of the page */
+
+.BlogPage .BlogPage_Container {
+    width: var(--content-width);
+    margin: var(--main-margin) auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.BlogPage .BlogPage_Container .mainTitle {
+    font-size: var(--mainTitle-font-size);
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.BlogPage .BlogPage_Container .BlogPage_SubTitleSection {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0rem;
+}
+
+.BlogPage .BlogPage_Container .Blog_Image {
+    display: inline-block;
+    margin: 0.5rem 0rem;
+}
+
+.BlogPage .BlogPage_Container ul {
+    list-style: inside;
+    text-indent: calc(-1 * var(--ul-text-indent-and-padding-left));
+    padding-left: var(--ul-text-indent-and-padding-left);
+    display: block;
+    font-size: var(--body-text-font-size);
+    line-height: 1.5;
+    margin: 0.5rem 0rem;
+}
+

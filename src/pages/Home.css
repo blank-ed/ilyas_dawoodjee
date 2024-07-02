@@ -45,12 +45,12 @@
 .Home .Home_Container .Home_Profile .Home_Avatar img {
     width: var(--user-image-size);
     height: var(--user-image-size);
-    transition: transform 0.5s;
+    /* transition: transform 0.5s; */
 }
 
-.Home .Home_Container .Home_Profile .Home_Avatar img:hover {
+/* .Home .Home_Container .Home_Profile .Home_Avatar img:hover {
     transform: translateY(-15px);
-}
+} */
 
 .Home .Home_Container .Home_Profile .Home_Subtitle p,
 .Home .Home_Container .Home_Profile .Home_Disclaimer p {

@@ -14,13 +14,7 @@ import BlogData from '../components/website_data/BlogData';
 
 function Home() {
   const postsPerPage = 3;
-  // Initialize currentPage directly from localStorage, default to 1 if not found
-  const [currentPage, setCurrentPage] = useState(parseInt(localStorage.getItem('currentPage')) || 1);
-
-  const setCurrentPageWithStorage = (page) => {
-    localStorage.setItem('currentPage', page.toString());
-    setCurrentPage(page);
-  };
+  const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -29,11 +23,11 @@ function Home() {
   const totalPages = Math.ceil(BlogData.length / postsPerPage);
 
   const nextPage = () => {
-    setCurrentPageWithStorage(currentPage < totalPages ? currentPage + 1 : currentPage);
+    setCurrentPage(prev => (prev < totalPages ? prev + 1 : prev));
   };
 
   const prevPage = () => {
-    setCurrentPageWithStorage(currentPage > 1 ? currentPage - 1 : currentPage);
+    setCurrentPage(prev => (prev > 1 ? prev - 1 : prev));
   };
 
   useEffect(() => {
