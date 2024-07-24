@@ -1,0 +1,71 @@
+.collapsableContainer {
+    width: 100%;
+    margin: 1rem 0;
+    display: inline-block;
+}
+
+.collapsableTitle {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+.collapsableContent {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: padding 0.2s ease-in-out, max-height 0.2s ease-in-out;
+}
+
+.collapsableContent.open {
+    padding: 10px;
+    max-height: 500px;
+}
+
+/* For Warning Container */
+
+.warning_container {
+    border-left: 0.25rem solid rgba(255, 145, 0);
+}
+
+.warning_title {
+    background-color: rgba(255, 145, 0, 0.5);
+}
+
+.warning_content {
+    background-color: rgba(255, 145, 0, 0.1);
+}
+
+/* For Information Container */
+
+.information_container {
+    border-left: 0.25rem solid rgba(0, 87, 184);
+}
+
+.information_title {
+    background-color: rgba(0, 87, 184, 0.5);
+}
+
+.information_content {
+    background-color: rgba(0, 87, 184, 0.1);
+}
+
+/* For Question Container */
+
+.question_container {
+    border-left: 0.25rem solid rgba(114, 24, 255);
+}
+
+.question_title {
+    background-color: rgba(114, 24, 255, 0.5);
+}
+
+.question_content {
+    background-color: rgba(114, 24, 255, 0.1);
+}

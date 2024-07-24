@@ -5,8 +5,9 @@ import Footer from '../components/Footer';
 
 function Blog() {
   return (
-    <div className='Blog'>
+    <div className='Blog Page'>
       <NavBar selected='blog'></NavBar>
+        
       <Footer></Footer>
     </div>
   )

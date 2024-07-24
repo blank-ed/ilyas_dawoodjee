@@ -2,29 +2,27 @@
     /*  */
     --gap-section: 2.5rem; /* Gap between each section */
     --main-margin: 2.5rem; /* Top and bottom margin */
-    --content-width: 50%; /* Width of the content */
+    --content-width: 60%; /* Width of the content */
     --gap-body: 1rem; /* Gap for the profile data and profile links and article footer */
     --user-image-size: 200px; /* Size of the user image */
-    --profile-font-size-paragraph: 1.25rem; /* Font size for profile paragraphs */
+
     --hover-color: rgb(75, 150, 0); /* Hover color */
     --lighter-hover-color: rgb(100, 200, 0); /* Lighter hover color eg. "Read More" text */
     --shade-color: rgb(158, 158, 158); /* Shade color eg. Disclaimer Text */
-    --article-image-padding: 1rem; /* Top and bottom padding of the article image */
+
+    --profile-font-size-paragraph: 1.25rem; /* Font size for profile paragraphs */
     --article-title-font-size: 1.5rem; /* Article title font size */
     --article-text-font-size: 1rem; /* Article body font size */
+
+    --article-image-padding: 1rem; /* Top and bottom padding of the article image */
     --article-text-padding-bottom: 0.75rem; /* Bottom padding between the article texts */
     --article-end-padding-bottom: 2.5rem; /* Bottom padding at the end of the article */
 }
 
-.Home,
 .Home .Home_Container,
 .Home .Home_Container .Home_Profile {
     display: flex;
     flex-direction: column;
-}
-
-.Home {
-    min-height: 100vh;
 }
 
 .Home .Home_Container {
@@ -90,6 +88,7 @@
 
 .Home .Home_Container .article .article_title h1 {
     font-weight: bold;
+    line-height: 1.25;
     font-size: var(--article-title-font-size);
     padding-bottom: var(--article-text-padding-bottom);
 }
@@ -99,6 +98,7 @@
 }
 
 .Home .Home_Container .article .article_subtitle {
+    line-height: 1.5;
     padding-bottom: var(--article-text-padding-bottom);
 }
 

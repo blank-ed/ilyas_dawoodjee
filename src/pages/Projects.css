@@ -1,5 +1,7 @@
-.Projects {
+.Projects .Projects_Container {
+    width: 80%;
+    margin: 2.5rem auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    gap: 2.5rem;
 }
