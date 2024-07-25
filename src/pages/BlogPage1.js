@@ -10,6 +10,10 @@ import { faCalendarDays, faFolderOpen } from '@fortawesome/free-regular-svg-icon
 import { faPen, faClock, faSection, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import TestImage from '../components/website_data/test.jpg'
+<<<<<<< HEAD
+=======
+import { type } from '@testing-library/user-event/dist/type';
+>>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
 
 function BlogPage1() {
   const pageRef = useRef(null);
@@ -63,9 +67,41 @@ function BlogPage1() {
           {/* First Section */}
           <span className="section_title"><a className='sectionIcon' href="#first"><FontAwesomeIcon icon={faSection} /></a>  Prerequisites</span>
           <span className="body">Before getting started with the main code, we need take care of some external resources. First, the Model Maker does not come with the default MediaPipe installation, so we need to install it separately. Next, we also need to get some data to train the ASL alphabet detector. MediaPipe will work directly from the files on disk, so some minor preprocessing on the dataset is also needed.</span>
+<<<<<<< HEAD
           <span className="subSection_title"><a className='sectionIcon subSection' href="#first_first"><FontAwesomeIcon icon={faBars} /></a>  Installing MediaPipe Model Maker</span>
           <span className="body">Installing is straightforward with pip. Note that the installation might not succeed on Windows. If you are on Windows, you can use the Windows Subsystem for Linux (WSL) instead.</span>
           <CodeBlock type="shell" title="Shell" extraText={["pip install mediapipe mediapipe-model-maker"]} />
+=======
+
+          <span className="subSection_title"><a className='sectionIcon subSection' href="#first_first"><FontAwesomeIcon icon={faBars} /></a>  Installing MediaPipe Model Maker</span>
+          <span className="body">Installing is straightforward with pip. Note that the installation might not succeed on Windows. If you are on Windows, you can use the Windows Subsystem for Linux (WSL) instead.</span>
+          <CodeBlock title="Shell" extraText={[
+            [{ type: 'shell', code: "pip install mediapipe mediapipe-model-maker" }]
+          ]} />
+
+          <span className="subSection_title"><a className='sectionIcon subSection' href="#first_second"><FontAwesomeIcon icon={faBars} /></a>  Getting the data</span>
+          <span className="body">For this example, I am going to use the SigNN Character Database from Kaggle. It contains 8442 images showing 24 characters of the english alphabet. The dataset excludes J and Z, because they are differentiated from other characters through motion (see the image below the post). The dataset was originally created to build a mobile ASL alphabet translator - which basically does what I am creating in this post, only better. The dataset creators have a detailed description of their solution, so definitely check it out and star their page.</span>
+          <span className="body">To download the dataset yourself, you need a Kaggle account (which is free). With 1.8GB it is fairly manageable. Before getting started, we will need to do some minor preprocessing, to make it work seamlessly with MediaPipe Model Maker.</span>
+
+          <span className="subSection_title"><a className='sectionIcon subSection' href="#first_third"><FontAwesomeIcon icon={faBars} /></a>  Data preparation</span>
+          <span className="body">According to the Model Maker documentation, only a small number of training examples is required to retrain/fine tune the models. Approximately 100 examples per class should be sufficient. The easiest way to provide the data to the Model Maker is through a <span className="code">from_folder</span> method. It scans the given folder, interprets any subdirectory as target classes and any containing (image) files as instances of that class. The SigNN dataset is already provided in this format.</span>
+          <span className="body">In addition, MediaPipe requires a <span className="code">"none"</span> class for training, which should include examples that do not show any of the target labels. Training will not run without it. We can create an empty folder called <span className="code">"none"</span> within the training directory. This will allow us to run the training, although it would probably be better to provide actual negative examples.</span>
+          <span className="body">We could start training with this dataset immediately. But data processing with the Model Maker is quite slow, so I do not want to work with the full dataset. Unfortunately, the MediaPipe interface has no straightforward way to control how much data is used. The easiest way I have found is to simply copy a the desired number of samples to a separate folder on disk. The following script, allows us to extract multiple non-overlapping subsets, including a heldout test set from the original dataset.</span>
+          <CodeBlock title="Python" extraText={[
+            [{ type: 'docstring', code: '"""Extract a sample from the ASL Alphabet dataset."""' }],
+            [{ type: '', code: '' }],
+            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' pathlib' }],
+            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' shutil' }],
+            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' typing' }],
+            [{ type: '', code: '' }],
+            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' click' }],
+            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' numpy' }, { type: 'import-keyword', code: ' as' }, { type: ' import', code: ' np' }],
+            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' tqdm' }],
+            [{ type: '', code: '' }],
+            [{ type: '', code: '' }],
+            [{ type: 'keyword', code: 'def' }, { type: 'function-name', code: ' process_split_sizes' }, { type: 'variable', code: '(splits: typing)' }],
+          ]} />
+>>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
 
         </div>
       </div>

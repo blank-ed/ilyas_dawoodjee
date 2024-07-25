@@ -16,15 +16,15 @@ import PublicationData from '../components/website_data/PublicationData';
 
 function About() {
   return (
-    <div className='About'>
+    <div className='About Page'>
       <NavBar selected="about"></NavBar>
       <div className="About_Container">
         <div className="About_Avatar">
           <img src={MyImage} alt="Ilyas's Headshot Picture" />
-          <p>Ilyas Dawoodjee, Engineer</p>
+          <p className='shade'>Ilyas Dawoodjee, Engineer</p>
         </div>
         <div className='About_Paragraph'>
-          <p>
+          <p className='body'>
             I am Ilyas Dawoodjee, currently a MSc Mechanical Engineering student at University of Manitoba where I research in the Intelligent Digital Manufacturing Laboratory (IDML). My area of research involves computer vision and machine learning integrated with industrial robots. I have experience involving the detection of physiological signals using computer vision and digial signal processing.
             I am constantly trying to learn new things, especially when it comes to coding. My main language is Python.
           </p>
@@ -70,9 +70,9 @@ function WorkExperienceSection({ WorkExperienceData }) {
         <div className="About_Each_Section" key={index}>
           <div className="Each_Section_Header">
             <span className="Each_Section_Title">{data.jobTitle}</span>
-            <span className='Each_Section_Date'>{data.jobDuration}</span>
+            <span className='Each_Section_Date shade'>{data.jobDuration}</span>
           </div>
-          <span className="Each_Section_SubHeader">
+          <span className="Each_Section_SubHeader body">
             {data.jobWebsite ? (
               <><a href={data.jobWebsite} target='_blank' rel='noopener noreferrer'>{data.jobPlace}</a>, </>
             ) : (
@@ -81,7 +81,7 @@ function WorkExperienceSection({ WorkExperienceData }) {
             {data.jobUniversity && <>{data.jobUniversity}</>}
             <>, {data.jobLocation}</>
           </span>
-          <span className="Each_Section_Information">
+          <span className="Each_Section_Information body">
             <ul>
               {data.jobPoints.map((dataPoints, index) => (
                 <li key={index}>{dataPoints}</li>
@@ -103,7 +103,7 @@ function EducationSection({ EducationData }) {
             <span className="Each_Section_Title">{data.educationTitle}</span>
             <span className='Each_Section_Date'>{data.educationDuration}</span>
           </div>
-          <span className="Each_Section_SubHeader">
+          <span className="Each_Section_SubHeader body">
             {data.educationLabWebsite ? (
               <><a href={data.educationLabWebsite} target='_blank' rel='noopener noreferrer'>{data.eudcationLabPlace}</a>, </>
             ) : (
@@ -112,7 +112,7 @@ function EducationSection({ EducationData }) {
             {data.educationUniversity && <>{data.educationUniversity}</>}
             <>, {data.educationLocation}</>
           </span>
-          <span className="Each_Section_Information">
+          <span className="Each_Section_Information body">
             <ul>
               {data.educationPoints.map((dataPoints, index) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: dataPoints }}></li>
@@ -130,7 +130,7 @@ function PublicationSection({ PublicationData }) {
     <>
       {PublicationData.map((data, index) => (
         <div className="About_Each_Section" key={index}>
-          <span className="Each_Section_Information">{data.publicationTitle}
+          <span className="Each_Section_Information body">{data.publicationTitle}
             {data.publicationWebsite ? (
               <><br />doi: <a href={data.publicationWebsite}>{data.publicationDoi}</a></>
             ) : (

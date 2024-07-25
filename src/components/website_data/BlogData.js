@@ -18,7 +18,7 @@ const BlogData = [
     },
     {
         image: TestImage,
-        article_title: "Facial landmark detection is still easy with MediaPipe (2023 update)",
+        article_title: "Faciall landmark detection is still easy with MediaPipe (2023 update)",
         published_date: "03 April 2024",
         published_folder: "/projects",
         folder_name: "Artificial Intelligence",
@@ -33,7 +33,7 @@ const BlogData = [
     },
     {
         image: TestImage,
-        article_title: "Facial landmark detection is still easy with MediaPipe (2023 update)",
+        article_title: "Facial llandmark detection is still easy with MediaPipe (2023 update)",
         published_date: "03 April 2024",
         published_folder: "/projects",
         folder_name: "Artificial Intelligence",
@@ -48,7 +48,7 @@ const BlogData = [
     },
     {
         image: TestImage,
-        article_title: "Facial landmark detection is still easy with MediaPipe (2023 update)",
+        article_title: "Faciaal landmark detection is still easy with MediaPipe (2023 update)",
         published_date: "03 April 2024",
         published_folder: "/projects",
         folder_name: "Artificial Intelligence",
@@ -63,7 +63,7 @@ const BlogData = [
     },
     {
         image: TestImage,
-        article_title: "Facial landmark detection is still easy with MediaPipe (2023 update)",
+        article_title: "Faciial landmark detection is still easy with MediaPipe (2023 update)",
         published_date: "03 April 2024",
         published_folder: "/projects",
         folder_name: "Artificial Intelligence",
@@ -77,5 +77,10 @@ const BlogData = [
         ],
     },
 ]
+
+BlogData.forEach(article => {
+    const words = article.article_title.split(' ');
+    article.article_link = '/blogpage/' + `${words[0]}_${words[1]}_${words[2]}`.toLowerCase();
+});
 
 export default BlogData;

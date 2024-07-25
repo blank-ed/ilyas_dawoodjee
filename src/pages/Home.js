@@ -22,23 +22,62 @@ function Home() {
 
   const totalPages = Math.ceil(BlogData.length / postsPerPage);
 
+  const updatePageInUrl = (newPage, updateUrl = true) => {
+    setCurrentPage(newPage);
+    if (updateUrl) {
+      const url = new URL(window.location);
+      url.searchParams.set('page', newPage);
+      window.history.pushState({}, '', url);
+    } else {
+      window.history.pushState({}, '', window.location.pathname);
+    }
+  };
+
   const nextPage = () => {
+<<<<<<< HEAD
     setCurrentPage(prev => (prev < totalPages ? prev + 1 : prev));
   };
 
   const prevPage = () => {
     setCurrentPage(prev => (prev > 1 ? prev - 1 : prev));
+=======
+    const newPage = currentPage < totalPages ? currentPage + 1 : currentPage;
+    updatePageInUrl(newPage);
+  };
+
+  const prevPage = () => {
+    const newPage = currentPage > 1 ? currentPage - 1 : currentPage;
+    updatePageInUrl(newPage);
+>>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
   };
 
   useEffect(() => {
-    const firstPostElement = document.querySelector('.article');
-    if (firstPostElement) {
-      firstPostElement.scrollIntoView({ behavior: 'smooth' });
+    const searchParams = new URLSearchParams(window.location.search);
+    const page = parseInt(searchParams.get('page')) || 1;
+    if (page !== currentPage) {
+      setCurrentPage(page);
     }
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }, [currentPage]);
 
+  useEffect(() => {
+    // This useEffect is only for cleanup when the component unmounts
+    return () => {
+      const url = new URL(window.location);
+      url.searchParams.delete('page'); // Remove only the 'page' parameter
+      window.history.replaceState({}, '', url.pathname + url.search + window.location.hash);
+    };
+  }, []);
+  
+  
+
   return (
-    <div className='Home'>
+    <div className='Home Page'>
       <NavBar></NavBar>
       <div className="Home_Container">
         <div className="Home_Profile">

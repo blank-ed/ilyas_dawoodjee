@@ -1,5 +1,10 @@
 .NavBar {
-    background-color: #252627;
+    background-color: #313436;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    position: sticky;
+    top: 0px;
+    z-index: 99999;
 }
 
 .NavBar_Sub {

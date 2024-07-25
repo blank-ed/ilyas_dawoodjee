@@ -10,6 +10,7 @@ function CodeBlock({ type, title, extraText }) {
 
     const toggleCollapse = () => setIsOpen(!isOpen);
 
+<<<<<<< HEAD
     // // Helper function to determine the icon based on the type
     // const getIcon = (type) => {
     //     switch (type) {
@@ -20,6 +21,8 @@ function CodeBlock({ type, title, extraText }) {
     //     }
     // };
 
+=======
+>>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
     return (
         <div className="collapsableContainerCode">
             <button className="collapsableTitleCode" onClick={toggleCollapse}>
@@ -29,14 +32,35 @@ function CodeBlock({ type, title, extraText }) {
                 <FontAwesomeIcon icon={isOpen ? faCopy : faEllipsis} />
             </button>
             <div className={`collapsableContentCode ${isOpen ? 'open' : ''}`}>
+<<<<<<< HEAD
                 <ol>
                     {extraText.map((text, index) => (
                         <li key={index}>{text}</li>
                     ))}
                 </ol>
+=======
+                <table>
+                    <tbody>
+                        {extraText.map((text, index) => (
+                            <tr key={index}>
+                                <td className='codeNumber'>{index + 1}</td>
+                                <td className='codeText'>{
+                                    text.map((item, idx) => (
+                                        <span key={idx} className={`${item.type}`}>{`${item.code}`}</span>
+                                    ))
+                                }</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+>>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
             </div>
         </div>
     );
 }
 
+<<<<<<< HEAD
 export default CodeBlock;
+=======
+export default CodeBlock;
+>>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
