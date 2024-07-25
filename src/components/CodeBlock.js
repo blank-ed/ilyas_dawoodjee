@@ -10,16 +10,6 @@ function CodeBlock({ type, title, extraText }) {
 
     const toggleCollapse = () => setIsOpen(!isOpen);
 
-    // // Helper function to determine the icon based on the type
-    // const getIcon = (type) => {
-    //     switch (type) {
-    //         case 'python':
-    //             return faTriangleExclamation;
-    //         default:
-    //             return faCircleExclamation; // Default icon
-    //     }
-    // };
-
     return (
         <div className="collapsableContainerCode">
             <button className="collapsableTitleCode" onClick={toggleCollapse}>
@@ -29,11 +19,20 @@ function CodeBlock({ type, title, extraText }) {
                 <FontAwesomeIcon icon={isOpen ? faCopy : faEllipsis} />
             </button>
             <div className={`collapsableContentCode ${isOpen ? 'open' : ''}`}>
-                <ol>
-                    {extraText.map((text, index) => (
-                        <li key={index}>{text}</li>
-                    ))}
-                </ol>
+                <table>
+                    <tbody>
+                        {extraText.map((text, index) => (
+                            <tr key={index}>
+                                <td className='codeNumber'>{index + 1}</td>
+                                <td className='codeText'>{
+                                    text.map((item, idx) => (
+                                        <span key={idx} className={`${item.type}`}>{`${item.code}`}</span>
+                                    ))
+                                }</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );
