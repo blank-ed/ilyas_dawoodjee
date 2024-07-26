@@ -7,7 +7,7 @@ import Collapsable from '../components/Collapsable';
 import CodeBlock from '../components/CodeBlock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays, faFolderOpen } from '@fortawesome/free-regular-svg-icons';
-import { faPen, faClock, faSection, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faClock, faSection, faBars, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import TestImage from '../components/website_data/test.jpg'
 import { type } from '@testing-library/user-event/dist/type';
@@ -92,16 +92,27 @@ function BlogPage1() {
             [{ type: '', code: '' }],
             [{ type: '', code: '' }],
             [{ type: 'a', code: 'def' }, { type: 'g', code: ' process_split_sizes' }, { type: 'b', code: '(splits: typing.Sequence[str]) -> typing.Dict[str, int]:' }],
-            [{ type: 'a', code: '    return' }, { type: 'b', code: '{s[' }, { type: 'h', code: '0' }, { type: 'b', code: ']: int(s[' }, { type: 'h', code: '1' }, { type: 'b', code: '])' }]
+            [{ type: 'a', code: '    return' }, { type: 'b', code: '{s[' }, { type: 'h', code: '0' }, { type: 'b', code: ']: int(s[' }, { type: 'h', code: '1' }, { type: 'b', code: ']) ' }, { type: 'a', code: 'for ' }, { type: 'b', code: 's ' }, { type: 'a', code: 'in ' }, { type: 'b', code: 'map(' }, { type: 'a', code: 'lambda ' }, { type: 'b', code: 'x: x.split(' }, { type: 'c', code: '":"' }, { type: 'b', code: '), splits)}' }]
           ]} />
 
           {/* References */}
-          <span className="section_title"><a className='sectionIcon' href="#references"><FontAwesomeIcon icon={faSection} /></a>  References</span>
-          <ol>
-            <li>C. Lugaresi et al., “MediaPipe: A Framework for Building Perception Pipelines,” 2019, <a href="" className="blog_links">arXiv:1906.08172v1</a>. ↩︎</li>
-            <li>C. Lugaresi et al., “MediaPipe: A Framework for Building Perception Pipelines,” 2019, <a href="" className="blog_links">arXiv:1906.08172v1</a>. ↩︎</li>
-          </ol>
+          <span className="section_title reference_section_title"><a className='sectionIcon' href="#references"><FontAwesomeIcon icon={faSection} /></a>  References</span>
+          <table className='reference_section_table'>
+            <tbody>
+              <tr>
+                <td className='body reference'>1. C. Lugaresi et al., “MediaPipe: A Framework for Building Perception Pipelines,” 2019, <a href="" className="blog_links">arXiv:1906.08172v1</a>. ↩︎</td>
+              </tr>
+              <tr>
+                <td className='body reference'>2. C. Lugaresi et al., “MediaPipe: A Framework for Building Perception Pipelines,” 2019, <a href="" className="blog_links">arXiv:1906.08172v1</a>. ↩︎</td>
+              </tr>
+            </tbody>
+          </table>
 
+          {/* Footer For Blog */}
+          <span className="blog_footer">
+            <span className="body footer_left"><a className='blog_links' href=""><FontAwesomeIcon icon={faChevronLeft} />&nbsp;&nbsp;Left Link Left Link Left Link Left Link</a></span>
+            <span className="body footer_right"><a className='blog_links' href="">Right Link Right Link Right Link Right Link&nbsp;&nbsp;<FontAwesomeIcon icon={faChevronRight} /></a></span>
+          </span>
         </div>
       </div>
       <Footer></Footer>
