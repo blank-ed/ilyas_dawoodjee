@@ -4,41 +4,38 @@
 
 Need to Design:
 - code layout --> fix it so its easier for me to code. maybe make like a blogpage1 code data or sth
-- add tags thing at the end of the footer
 - maybe change up and add a table of contents dropdown thing
     - connect the sections
+- connect the reference links
 - replicate for the next 4 sections and connect the footer left and right one
 - maybe try making a blogpage1 content section to make thing easier?????
+    - For now, I can make a content data section thing for:
+        - date
+        - folder name
+        - tag links
+        - references
+        - left and right link
+        - table of contents data
+- do the copy code button thing
 - 
 
 */
 
 :root {
     /*  */
-    --main-margin: 2.5rem;
-    /* Top and bottom margin */
-    --content-width: 60%;
-    /* Width of the content */
+    --main-margin: 2.5rem; /* Top and bottom margin */
+    --content-width: 60%; /* Width of the content */
 
-    --mainTitle-font-size: 2rem;
-    /* Font size for the main page title */
-    --sectionTitle-font-size: 1.75rem;
-    /* Font size for each section title */
-    --subSectionTitle-font-size: 1.4rem;
-    /* Font size for each sub section title */
-    --body-text-font-size: 1rem;
-    /* Font size for the body text */
-    --code-font-size: 0.8rem;
-    /* Font size for the code text */
-    --sub-body-text-font-size: 0.75rem;
-    /* Font size for the sub body text */
+    --mainTitle-font-size: 2rem; /* Font size for the main page title */
+    --sectionTitle-font-size: 1.75rem; /* Font size for each section title */
+    --subSectionTitle-font-size: 1.4rem; /* Font size for each sub section title */
+    --body-text-font-size: 1rem; /* Font size for the body text */
+    --code-font-size: 0.8rem; /* Font size for the code text */
+    --sub-body-text-font-size: 0.75rem; /* Font size for the sub body text */
 
-    --hover-color: rgb(75, 150, 0);
-    /* Hover color */
-    --lighter-hover-color: rgb(100, 200, 0);
-    /* Lighter hover color */
-    --shade-color: rgb(158, 158, 158);
-    /* Shade color eg. Disclaimer Text */
+    --hover-color: rgb(75, 150, 0); /* Hover color */
+    --lighter-hover-color: rgb(100, 200, 0); /* Lighter hover color */
+    --shade-color: rgb(158, 158, 158); /* Shade color eg. Disclaimer Text */
     --code-background-color: rgba(44, 71, 114, 0.3);
     --code-color: #ffa17a;
 
@@ -152,56 +149,55 @@ Need to Design:
     width: 100%;
 }
 
-/* .BlogPage .BlogPage_Container .reference_section_table::after {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-} */
-
-
-
 .BlogPage .BlogPage_Container .reference {
     line-height: 1.25;
     padding-left: 2rem;
 }
 
-.blog_footer {
+.BlogPage .BlogPage_Container .blog_tags {
+    margin: 0.5rem 0rem;
+}
+
+.BlogPage .BlogPage_Container .blog_tags > * {
+    display: inline;
+    vertical-align: middle;
+}
+
+.BlogPage .BlogPage_Container .blog_footer {
     margin-top: 2rem !important;
     display: flex;
     flex-direction: column;
     font-weight: bold;
 }
 
-.blog_footer .footer_left {
+.BlogPage .BlogPage_Container .blog_footer .footer_left {
     margin: 0rem !important;
     display: flex !important;
     justify-content: left;
 }
 
-.blog_footer .footer_left a {
+.BlogPage .BlogPage_Container .blog_footer .footer_left a {
     position: relative;
     left: 10px;
     transition: left 0.3s ease-in-out;
 }
 
-.blog_footer .footer_left a:hover {
+.BlogPage .BlogPage_Container .blog_footer .footer_left a:hover {
     left: 0;
 }
 
-.blog_footer .footer_right {
+.BlogPage .BlogPage_Container .blog_footer .footer_right {
     margin: 0rem !important;
     display: flex !important;
     justify-content: right;
 }
 
-.blog_footer .footer_right a {
+.BlogPage .BlogPage_Container .blog_footer .footer_right a {
     position: relative;
     right: 10px;
     transition: right 0.3s ease-in-out;
 }
 
-.blog_footer .footer_right a:hover {
+.BlogPage .BlogPage_Container .blog_footer .footer_right a:hover {
     right: 0;
 }
