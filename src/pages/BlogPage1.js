@@ -10,10 +10,7 @@ import { faCalendarDays, faFolderOpen } from '@fortawesome/free-regular-svg-icon
 import { faPen, faClock, faSection, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import TestImage from '../components/website_data/test.jpg'
-<<<<<<< HEAD
-=======
 import { type } from '@testing-library/user-event/dist/type';
->>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
 
 function BlogPage1() {
   const pageRef = useRef(null);
@@ -83,19 +80,27 @@ function BlogPage1() {
           <span className="body">In addition, MediaPipe requires a <span className="code">"none"</span> class for training, which should include examples that do not show any of the target labels. Training will not run without it. We can create an empty folder called <span className="code">"none"</span> within the training directory. This will allow us to run the training, although it would probably be better to provide actual negative examples.</span>
           <span className="body">We could start training with this dataset immediately. But data processing with the Model Maker is quite slow, so I do not want to work with the full dataset. Unfortunately, the MediaPipe interface has no straightforward way to control how much data is used. The easiest way I have found is to simply copy a the desired number of samples to a separate folder on disk. The following script, allows us to extract multiple non-overlapping subsets, including a heldout test set from the original dataset.</span>
           <CodeBlock title="Python" extraText={[
-            [{ type: 'docstring', code: '"""Extract a sample from the ASL Alphabet dataset."""' }],
+            [{ type: 'd', code: '"""Extract a sample from the ASL Alphabet dataset."""' }],
             [{ type: '', code: '' }],
-            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' pathlib' }],
-            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' shutil' }],
-            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' typing' }],
+            [{ type: 'a', code: 'import' }, { type: 'b', code: ' pathlib' }],
+            [{ type: 'a', code: 'import' }, { type: 'b', code: ' shutil' }],
+            [{ type: 'a', code: 'import' }, { type: 'b', code: ' typing' }],
             [{ type: '', code: '' }],
-            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' click' }],
-            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' numpy' }, { type: 'import-keyword', code: ' as' }, { type: ' import', code: ' np' }],
-            [{ type: 'import-keyword', code: 'import' }, { type: 'import', code: ' tqdm' }],
+            [{ type: 'a', code: 'import' }, { type: 'b', code: ' click' }],
+            [{ type: 'a', code: 'import' }, { type: 'b', code: ' numpy' }, { type: 'a', code: ' as' }, { type: 'b', code: ' np' }],
+            [{ type: 'a', code: 'import' }, { type: 'b', code: ' tqdm' }],
             [{ type: '', code: '' }],
             [{ type: '', code: '' }],
-            [{ type: 'keyword', code: 'def' }, { type: 'function-name', code: ' process_split_sizes' }, { type: 'variable', code: '(splits: typing)' }],
+            [{ type: 'a', code: 'def' }, { type: 'g', code: ' process_split_sizes' }, { type: 'b', code: '(splits: typing.Sequence[str]) -> typing.Dict[str, int]:' }],
+            [{ type: 'a', code: '    return' }, { type: 'b', code: '{s[' }, { type: 'h', code: '0' }, { type: 'b', code: ']: int(s[' }, { type: 'h', code: '1' }, { type: 'b', code: '])' }]
           ]} />
+
+          {/* References */}
+          <span className="section_title"><a className='sectionIcon' href="#references"><FontAwesomeIcon icon={faSection} /></a>  References</span>
+          <ol>
+            <li>C. Lugaresi et al., “MediaPipe: A Framework for Building Perception Pipelines,” 2019, <a href="" className="blog_links">arXiv:1906.08172v1</a>. ↩︎</li>
+            <li>C. Lugaresi et al., “MediaPipe: A Framework for Building Perception Pipelines,” 2019, <a href="" className="blog_links">arXiv:1906.08172v1</a>. ↩︎</li>
+          </ol>
 
         </div>
       </div>

@@ -34,13 +34,6 @@ function Home() {
   };
 
   const nextPage = () => {
-<<<<<<< HEAD
-    setCurrentPage(prev => (prev < totalPages ? prev + 1 : prev));
-  };
-
-  const prevPage = () => {
-    setCurrentPage(prev => (prev > 1 ? prev - 1 : prev));
-=======
     const newPage = currentPage < totalPages ? currentPage + 1 : currentPage;
     updatePageInUrl(newPage);
   };
@@ -48,7 +41,6 @@ function Home() {
   const prevPage = () => {
     const newPage = currentPage > 1 ? currentPage - 1 : currentPage;
     updatePageInUrl(newPage);
->>>>>>> 571e0bfbab953cafd416e423e9584e805042b18e
   };
 
   useEffect(() => {
