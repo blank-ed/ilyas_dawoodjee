@@ -3,6 +3,7 @@
     margin: 1rem 0;
     display: inline-block;
     border-left: 0.25rem solid rgba(3, 94, 38);
+    white-space: pre;
 }
 
 .collapsableTitleCode {
@@ -51,38 +52,39 @@
 
 /* Keywords
    Example: if, else, while, for, import, def, class */
-.keyword,
-.import-keyword,
-.exception,
-.boolean {
+.a {
     color: orange;
 }
 
-.a {
+.b {
     color: lightgrey;
 }
 
-.b {
+.c {
     color: green;
 }
 
-.c {
-    color: grey;
-}
-
 .d {
-    color: darkred;
+    color: green;
+    font-style: italic;
 }
 
 .e {
-    color: blue;
+    color: grey;
 }
 
 .f {
-    color: lightskyblue;
+    color: darkred;
 }
 
 .g {
-    color: purple;
+    color: blue;
 }
 
+.h {
+    color: lightskyblue;
+}
+
+.i {
+    color: purple;
+}

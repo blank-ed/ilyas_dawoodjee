@@ -131,3 +131,13 @@ Need to Design:
     margin: 0.5rem 0rem;
 }
 
+.BlogPage .BlogPage_Container ol {
+    list-style: inside;
+    list-style-type: decimal;
+    text-indent: calc(-1 * var(--ul-text-indent-and-padding-left));
+    padding-left: var(--ul-text-indent-and-padding-left);
+    display: block;
+    font-size: var(--body-text-font-size);
+    line-height: 1.5;
+    margin: 0.5rem 0rem;
+}
