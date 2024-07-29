@@ -35,12 +35,12 @@ function Collapsable({ type, title, extraText }) {
     return (
         <div className={`${type}_container collapsableContainer`}>
             <button className={`${type}_title collapsableTitle`} onClick={toggleCollapse}>
-                <span className="button-title">
+                <span className="button-title body">
                     <FontAwesomeIcon icon={getIcon(type)} />&nbsp;&nbsp;{title}
                 </span>
                 <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
             </button>
-            <div className={`${type}_content collapsableContent ${isOpen ? 'open' : ''}`}>
+            <div className={`${type}_content collapsableContent body ${isOpen ? 'open' : ''}`}>
                 {extraText}
             </div>
         </div>

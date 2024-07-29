@@ -28,14 +28,14 @@ function TableofContent({ contentText }) {
     return (
         <div className={`tableofcontentContainer`}>
             <button className={`tableofcontentTitle`} onClick={toggleCollapse}>
-                <span className="button-title">
+                <span className="button-title body">
                     <FontAwesomeIcon icon={faTable} />&nbsp;&nbsp;TABLE OF CONTENTS
                 </span>
                 <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
             </button>
             <div className={`tableofcontentContent ${isOpen ? 'open' : ''}`}>
                 {contentText.map((value, index) => (
-                    <Link to={`${value.section_link}`} className={`${value.type} tableofcontentsText body`}>
+                    <Link to={`${value.section_link}`} className={`${value.type} tableofcontentsText body`} key={`${index}`}>
                         {value.title}
                     </Link>
                 ))}

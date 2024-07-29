@@ -1,12 +1,18 @@
+:root {
+    --collapsableContainer-margin: 1rem; /* Margin for the container */
+    --collapsableTitle-padding: 10px; /* Padding for the title */
+    --collapsableContent-padding: 10px; /* Padding for the content in collapsable */
+}
+
 .collapsableContainer {
     width: 100%;
-    margin: 1rem 0;
+    margin: var(--collapsableContainer-margin) 0;
     display: inline-block;
 }
 
 .collapsableTitle {
     width: 100%;
-    padding: 10px;
+    padding: var(--collapsableTitle-padding);
     text-align: left;
     border: none;
     cursor: pointer;
@@ -21,11 +27,15 @@
     max-height: 0;
     overflow: hidden;
     transition: padding 0.2s ease-in-out, max-height 0.2s ease-in-out;
+    margin: 0rem !important;
+    display: block !important;
 }
 
 .collapsableContent.open {
-    padding: 10px;
+    padding: var(--collapsableContent-padding);
     max-height: 500px;
+    margin: 0rem !important;
+    display: block !important;
 }
 
 /* For Warning Container */

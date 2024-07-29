@@ -2,22 +2,15 @@
 
 - I have warning, information, question
 
-Need to Design:
-- code layout --> fix it so its easier for me to code. maybe make like a blogpage1 code data or sth
-- maybe change up and add a table of contents dropdown thing
-    - connect the sections
-- connect the reference links
-- replicate for the next 4 sections and connect the footer left and right one
-- maybe try making a blogpage1 content section to make thing easier?????
-    - For now, I can make a content data section thing for:
-        - date
-        - folder name
-        - tag links
-        - references
-        - left and right link
-        - table of contents data
-- do the copy code button thing
-- 
+Need to design:
+- Blog main section
+- projects --> this will be categories 
+    - maybe add tags into the projects section
+
+Need to fix:
+- faCircleQuestion fill it
+- make blogpage.js and then render 5 blogpage datas (remember to fix the data like links and shit)
+- clean up code in general
 
 */
 
@@ -39,7 +32,20 @@ Need to Design:
     --code-background-color: rgba(44, 71, 114, 0.3);
     --code-color: #ffa17a;
 
-    --ul-text-indent-and-padding-left: 20px;
+    --ul-text-indent-and-padding-left: 20px; /* This is for the lists */
+    --line-height: 1.5; /* This is for the line height */
+    --reference-line-height: 1.25; /* Line height for the references */
+    --blog-footer-animation: 10px; /* The moving left and right animation for the blog footer next links */
+    --blog-page-subtitle-section-gap: 1rem; /* Gap between the blog page's subtitle (eg. date, no. words, time, folder name) */
+
+    --general-margin: 0.5rem; /* General margin that I use for top and bottom */
+    --section-title-margin-top: 0.75rem; /* Margin top for each sections title */
+    --section-title-margin-bottom: 0.25rem; /* Margin bottom for each sections title */
+    --subSection-title-margin-top: 1rem; /* Margin top for each sub sections title */
+    --subSection-title-margin-bottom: 0.5rem; /* Margin bottom for each sub sections title */
+    --reference-section-table-padding-top-bottom: 1rem; /* Top and bottom padding for the reference section */
+    --reference-padding-left: 2rem; /* Left padding for the references */
+    --blog-footer-margin-top: 2rem; /* Margin top for the blog footer (left link and right link container) */
 }
 
 
@@ -57,12 +63,17 @@ Need to Design:
     color: var(--lighter-hover-color);
 }
 
+.BlogPage .BlogPage_Container .blog_links_inverse:hover,
+.BlogPage .BlogPage_Container .blog_links_inverse:hover svg path {
+    color: var(--hover-color);
+}
+
 .BlogPage .BlogPage_Container .body {
-    font-size: var(--body-text-font-size);
-    line-height: 1.5;
     text-align: justify;
     display: inline-block;
-    margin: 0.5rem 0rem;
+    font-size: var(--body-text-font-size);
+    line-height: var(--line-height);
+    margin: var(--general-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container .sub-body {
@@ -79,10 +90,10 @@ Need to Design:
 }
 
 .BlogPage .BlogPage_Container .section_title {
-    font-size: var(--sectionTitle-font-size);
     display: inline-block;
-    margin: 0.75rem 0rem 0.25rem 0rem;
     font-weight: bold;
+    font-size: var(--sectionTitle-font-size);
+    margin: var(--section-title-margin-top) 0rem var(--section-title-margin-bottom) 0rem;
 }
 
 .BlogPage .BlogPage_Container strong {
@@ -101,7 +112,7 @@ Need to Design:
 .BlogPage .BlogPage_Container .subSection_title {
     font-size: var(--subSectionTitle-font-size);
     font-weight: bold;
-    margin: 1rem 0rem 0.5rem 0rem;
+    margin: var(--subSection-title-margin-top) 0rem var(--subSection-title-margin-bottom) 0rem;
     display: inline-block;
 }
 
@@ -118,18 +129,18 @@ Need to Design:
     font-size: var(--mainTitle-font-size);
     font-weight: bold;
     display: inline-block;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--general-margin);
 }
 
 .BlogPage .BlogPage_Container .BlogPage_SubTitleSection {
     display: flex;
-    gap: 1rem;
-    margin: 0.5rem 0rem;
+    gap: var(--blog-page-subtitle-section-gap);
+    margin: var(--general-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container .Blog_Image {
     display: inline-block;
-    margin: 0.5rem 0rem;
+    margin: var(--general-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container ul {
@@ -138,24 +149,24 @@ Need to Design:
     padding-left: var(--ul-text-indent-and-padding-left);
     display: block;
     font-size: var(--body-text-font-size);
-    line-height: 1.5;
-    margin: 0.5rem 0rem;
+    line-height: var(--line-height);
+    margin: var(--general-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container .reference_section_table {
     border-bottom: 1px solid lightgray;
     border-top: 1px solid lightgray;
-    padding: 1rem 0rem;
+    padding: var(--reference-section-table-padding-top-bottom) 0rem;
     width: 100%;
 }
 
 .BlogPage .BlogPage_Container .reference {
-    line-height: 1.25;
-    padding-left: 2rem;
+    line-height: var(--reference-line-height);
+    padding-left: var(--reference-padding-left);
 }
 
 .BlogPage .BlogPage_Container .blog_tags {
-    margin: 0.5rem 0rem;
+    margin: var(--general-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container .blog_tags > * {
@@ -164,21 +175,29 @@ Need to Design:
 }
 
 .BlogPage .BlogPage_Container .blog_footer {
-    margin-top: 2rem !important;
+    margin-top: var(--blog-footer-margin-top) !important;
     display: flex;
     flex-direction: column;
     font-weight: bold;
 }
 
-.BlogPage .BlogPage_Container .blog_footer .footer_left {
+.BlogPage .BlogPage_Container .blog_footer .footer_left,
+.BlogPage .BlogPage_Container .blog_footer .footer_right {
     margin: 0rem !important;
     display: flex !important;
+}
+
+.BlogPage .BlogPage_Container .blog_footer .footer_left {
     justify-content: left;
+}
+
+.BlogPage .BlogPage_Container .blog_footer .footer_right {
+    justify-content: right;
 }
 
 .BlogPage .BlogPage_Container .blog_footer .footer_left a {
     position: relative;
-    left: 10px;
+    left: var(--blog-footer-animation);
     transition: left 0.3s ease-in-out;
 }
 
@@ -186,15 +205,9 @@ Need to Design:
     left: 0;
 }
 
-.BlogPage .BlogPage_Container .blog_footer .footer_right {
-    margin: 0rem !important;
-    display: flex !important;
-    justify-content: right;
-}
-
 .BlogPage .BlogPage_Container .blog_footer .footer_right a {
     position: relative;
-    right: 10px;
+    right: var(--blog-footer-animation);
     transition: right 0.3s ease-in-out;
 }
 

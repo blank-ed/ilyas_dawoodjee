@@ -1,40 +1,68 @@
+:root {
+    --collapsableContainer-margin: 1rem; /* Margin for the container */
+    --collapsableTitle-padding: 10px; /* Padding for the title */
+    --collapsableContent-padding: 10px; /* Padding for the content in collapsable */
+    --code-font-size: 0.8rem; /* Font size for the code */
+    --codeNumber-minimum-width: 1.6rem;
+    --codeText-padding-left: 0.5rem;
+}
+
 .collapsableContainerCode {
     width: 100%;
-    margin: 1rem 0;
+    margin: var(--collapsableContainer-margin) 0;
     display: inline-block;
     border-left: 0.25rem solid rgba(3, 94, 38);
     white-space: pre;
 }
 
 .collapsableTitleCode {
-    width: 100%;
-    padding: 10px;
-    text-align: left;
-    border: none;
-    cursor: pointer;
-    outline: none;
     display: flex;
     justify-content: space-between;
-    transition: background-color 0.3s ease;
+    align-items: center;
     background-color: rgba(3, 94, 38, 0.5);
+    padding: var(--collapsableTitle-padding);
+    cursor: pointer;
+}
+
+.collapseButton {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.copyIcon {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.copyIcon:hover {
+    color: rgb(75, 150, 0);
 }
 
 .collapsableContentCode {
     padding: 0;
     max-height: 0;
     overflow: hidden;
-    transition: padding 0.2s ease-in-out, max-height 0.2s ease-in-out;
+    transition: padding 0.2s ease-in-out, max-height 0.2s ease-in-out, opacity 0.3s ease-in-out;
     background-color: rgba(3, 94, 38, 0.1);
-    font-size: 0.8rem;
+    font-size: var(--code-font-size);
+    opacity: 1;
 }
 
 .collapsableContentCode.open {
     max-height: 500px;
-    font-size: 0.8rem;
+    font-size: var(--code-font-size);
+}
+
+.collapsableContentCode.hidden {
+    opacity: 0;
 }
 
 .collapsableContentCode .codeNumber {
-    min-width: 1.6rem;
+    min-width: var(--codeNumber-minimum-width);
     text-align: center;
     font-family: 'Space mono', monospace;
     color: gray;
@@ -42,7 +70,7 @@
 
 .collapsableContentCode .codeText {
     width: 100%;
-    padding: 0rem 0rem 0rem 0.5rem;
+    padding-left: var(--codeText-padding-left);
     font-family: 'Space mono', monospace;
 }
 
@@ -50,8 +78,6 @@
     color: #ffa17a;
 }
 
-/* Keywords
-   Example: if, else, while, for, import, def, class */
 .a {
     color: orange;
 }
