@@ -1,0 +1,8 @@
+.Tags .Tags_Container {
+    width: 60%;
+    margin: 2.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+

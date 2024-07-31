@@ -1,22 +1,23 @@
-import TestImage from './test.jpg'
+import TestImage from '../test.jpg'
 import { faBars, faCalendarDays, faChevronLeft, faChevronRight, faClock, faFolderOpen, faPen, faSection, faTag } from '@fortawesome/free-solid-svg-icons';
-import BlogData from './BlogData';
+import BlogData from '../BlogData';
 
-const BlogPage4Data = [
+const BlogIndex = 1;
+
+const BlogPage2Data = [
     // Title Section
     {
         type: 'div', className: 'BlogPage_TitleSection', data: [
-            { type: 'span', className: 'mainTitle', data: `${BlogData[3].article_title}` },
+            { type: 'span', className: 'mainTitle', data: `${BlogData[BlogIndex].article_title}` },
             {
                 type: 'div', className: 'BlogPage_SubTitleSection', data: []
             },
             {
                 type: 'div', className: 'blog_tags', data: [
                     { type: 'span', className: 'sub-body', icon: faTag },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[3].article_tags[0].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[3].article_tags[0].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[3].article_tags[1].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[3].article_tags[1].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[3].article_tags[2].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[3].article_tags[2].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[3].article_tags[3].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[3].article_tags[3].tag_name}` }] }
+                    ...BlogData[BlogIndex].article_tags.map((tag, index) => ({
+                        type: 'span', className: 'sub-body', data: [{ type: 'a', className: 'tag blog_links_inverse', data: `${tag.tag_name}${index < BlogData[BlogIndex].article_tags.length - 1 ? ', ' : ''}` }]
+                    }))
                 ]
             },
             {
@@ -159,8 +160,8 @@ const BlogPage4Data = [
             // Footer
             {
                 type: 'span', className: 'blog_footer', data: [
-                    { type: 'span', className: 'body footer_left', data: [{ type: "Link", className: 'blog_links_inverse', to: `${BlogData[2].article_link}`, icon: faChevronLeft, position: 'left', data: `${BlogData[2].article_title}` }] },
-                    { type: 'span', className: 'body footer_right', data: [{ type: "Link", className: 'blog_links_inverse', to: `${BlogData[4].article_link}`, icon: faChevronRight, position: 'right', data: `${BlogData[4].article_title}` }] }
+                    { type: 'span', className: 'body footer_left', data: [{ type: "Link", className: 'blog_links_inverse', to: `${BlogData[0].article_link}`, icon: faChevronLeft, position: 'left', data: `${BlogData[0].article_title}` }] },
+                    { type: 'span', className: 'body footer_right', data: [{ type: "Link", className: 'blog_links_inverse', to: `${BlogData[2].article_link}`, icon: faChevronRight, position: 'right', data: `${BlogData[2].article_title}` }] }
                 ]
             }
         ]
@@ -186,14 +187,14 @@ function extractAndCountWords(data) {
     return text.trim().split(/\s+/).length;
 }
 
-const wordCount = extractAndCountWords(BlogPage4Data);;
+const wordCount = extractAndCountWords(BlogPage2Data);;
 const timeTaken = Math.ceil(wordCount / 200);
 
-BlogPage4Data[0].data[1].data.push(
-    { type: 'span', className: 'date sub-body', icon: faCalendarDays, data: `${BlogData[3].published_date}` },
+BlogPage2Data[0].data[1].data.push(
+    { type: 'span', className: 'date sub-body', icon: faCalendarDays, data: `${BlogData[BlogIndex].published_date}` },
     { type: 'span', className: 'words sub-body', icon: faPen, data: `${wordCount} words` },
     { type: 'span', className: 'time sub-body', icon: faClock, data: `${timeTaken} minutes` },
-    { type: 'span', className: 'folder sub-body', icon: faFolderOpen, data: [{ type: 'Link', to: `${BlogData[3].published_folder}`, className: 'blog_links', data: `${BlogData[3].folder_name}` }] }
+    { type: 'span', className: 'folder sub-body', icon: faFolderOpen, data: [{ type: 'a', className: 'folder blog_links', data: `${BlogData[BlogIndex].folder_name}` }] }
 );
 
-export default BlogPage4Data;
+export default BlogPage2Data;

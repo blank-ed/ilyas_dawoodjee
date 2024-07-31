@@ -1,7 +1,81 @@
 .Projects .Projects_Container {
-    width: 80%;
+    width: 60%;
     margin: 2.5rem auto;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
 }
+
+.Projects .Projects_Container .Projects_Title_Section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Projects .Projects_Title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.Projects .Projects_Button {
+    background-color: inherit;
+    border: 2px solid green; /* change color later */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.Projects .Projects_Button:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+.Projects .Project_Contents {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.Projects .Project_Contents div {
+    display: flex;
+    flex-direction: column;
+}
+
+.Projects .Project_Contents .subTitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.Projects .Project_Contents .all_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Projects .Project_Contents .data {
+    font-size: 1rem;
+    margin: 0.25rem 0rem 0.25rem 1.5rem;
+}
+
+.Projects .Project_Contents .data:first-child {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Projects .Project_Contents .data:nth-child(2) {
+    min-width: max-content;
+}
+
+.Projects .Project_Contents .data .article_link:hover {
+    color: green;
+}
+
+.highlight,
+.highlight span {
+    color: yellow; /* highlight color */
+    transition: color 0.5s ease-in-out;
+}
+
+

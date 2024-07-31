@@ -3,14 +3,9 @@
 - I have warning, information, question
 
 Need to design:
-- Blog main section
-- projects --> this will be categories 
-    - maybe add tags into the projects section
-
-Need to fix:
-- faCircleQuestion fill it
-- make blogpage.js and then render 5 blogpage datas (remember to fix the data like links and shit)
-- clean up code in general
+- repsonsive layout
+- make 5 pages based on Samuel Proells data just as a filler and to test shit
+- redesign the styling of pages
 
 */
 
@@ -140,7 +135,8 @@ Need to fix:
 
 .BlogPage .BlogPage_Container .Blog_Image {
     display: inline-block;
-    margin: var(--general-margin) 0rem;
+    margin: var(--general-margin) auto;
+    display: block;
 }
 
 .BlogPage .BlogPage_Container ul {
@@ -213,4 +209,9 @@ Need to fix:
 
 .BlogPage .BlogPage_Container .blog_footer .footer_right a:hover {
     right: 0;
+}
+
+.BlogPage .highlight {
+    color: yellow; /* highlight color */
+    transition: color 0.5s ease-in-out; /* ease-in-out transition */
 }

@@ -1,22 +1,23 @@
-import TestImage from './test.jpg'
+import TestImage from '../test.jpg'
 import { faBars, faCalendarDays, faChevronLeft, faChevronRight, faClock, faFolderOpen, faPen, faSection, faTag } from '@fortawesome/free-solid-svg-icons';
-import BlogData from './BlogData';
+import BlogData from '../BlogData';
 
-const BlogPage1Data = [
+const BlogIndex = 4;
+
+const BlogPage5Data = [
     // Title Section
     {
         type: 'div', className: 'BlogPage_TitleSection', data: [
-            { type: 'span', className: 'mainTitle', data: `${BlogData[0].article_title}` },
+            { type: 'span', className: 'mainTitle', data: `${BlogData[BlogIndex].article_title}` },
             {
                 type: 'div', className: 'BlogPage_SubTitleSection', data: []
             },
             {
                 type: 'div', className: 'blog_tags', data: [
                     { type: 'span', className: 'sub-body', icon: faTag },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[0].article_tags[0].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[0].article_tags[0].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[0].article_tags[1].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[0].article_tags[1].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[0].article_tags[2].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[0].article_tags[2].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[0].article_tags[3].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[0].article_tags[3].tag_name}` }] }
+                    ...BlogData[BlogIndex].article_tags.map((tag, index) => ({
+                        type: 'span', className: 'sub-body', data: [{ type: 'a', className: 'tag blog_links_inverse', data: `${tag.tag_name}${index < BlogData[BlogIndex].article_tags.length - 1 ? ', ' : ''}` }]
+                    }))
                 ]
             },
             {
@@ -34,7 +35,7 @@ const BlogPage1Data = [
                 type: 'span', className: 'body', data: [
                     { type: 'Text', data: 'MediaPipe' },
                     { type: 'Link', to: '#ref_1', className: 'blog_links', data: [{ type: 'sup', id: 'intext_ref_1', data: '[1]' }] },
-                    { type: 'Text', data: ' is an W T F H amazing library but is it really though? of ready-to-use deep learning models for common tasks in various domains.' },
+                    { type: 'Text', data: ' is an amazing library of ready-to-use deep learning models for common tasks in various domains.' },
                     { type: 'a', href: "https://www.samproell.io/posts/ai/mediapipe-update-2023/", className: 'blog_links', data: " My previous post" },
                     { type: 'Text', data: ' highlights how you can use it to easily detect facial landmarks. There are many' },
                     { type: 'a', href: "https://ai.google.dev/edge/mediapipe/solutions/guide#available_solutions", className: 'blog_links', data: " other solutions" },
@@ -45,7 +46,7 @@ const BlogPage1Data = [
             },
             {
                 type: 'span', className: 'body', data: [
-                    { type: 'Text', data: 'In this particular example, which particular example we will customize the hand gesture recognition' },
+                    { type: 'Text', data: 'In this particular example, we will customize the hand gesture recognition' },
                     { type: 'Link', to: '#ref_2', className: 'blog_links', data: [{ type: 'sup', id: 'intext_ref_2', data: '[2]' }] },
                     { type: 'Text', data: ' task to build a model for reading the' },
                     { type: 'a', href: "https://www.samproell.io/posts/ai/mediapipe-update-2023/", className: 'blog_links', data: " American Sign Language (ASL)" },
@@ -159,8 +160,8 @@ const BlogPage1Data = [
             // Footer
             {
                 type: 'span', className: 'blog_footer', data: [
-                    // { type: 'span', className: 'body footer_left', data: [{ type: "Link", className: 'blog_links_inverse', to: '/blogpage/facial_landmark_detection', icon: faChevronLeft, position: 'left', data: 'Left Link Left Link Left Link Left Link' }] },
-                    { type: 'span', className: 'body footer_right', data: [{ type: "Link", className: 'blog_links_inverse', to: `${BlogData[1].article_link}`, icon: faChevronRight, position: 'right', data: `${BlogData[1].article_title}` }] }
+                    { type: 'span', className: 'body footer_left', data: [{ type: "Link", className: 'blog_links_inverse', to: `${BlogData[3].article_link}`, icon: faChevronLeft, position: 'left', data: `${BlogData[3].article_title}` }] },
+                    // { type: 'span', className: 'body footer_right', data: [{ type: "Link", className: 'blog_links_inverse', to: `${BlogData[5].article_link}`, icon: faChevronRight, position: 'right', data: 'Right Link Right Link Right Link Right Link' }] }
                 ]
             }
         ]
@@ -186,14 +187,14 @@ function extractAndCountWords(data) {
     return text.trim().split(/\s+/).length;
 }
 
-const wordCount = extractAndCountWords(BlogPage1Data);;
+const wordCount = extractAndCountWords(BlogPage5Data);;
 const timeTaken = Math.ceil(wordCount / 200);
 
-BlogPage1Data[0].data[1].data.push(
-    { type: 'span', className: 'date sub-body', icon: faCalendarDays, data: `${BlogData[0].published_date}` },
+BlogPage5Data[0].data[1].data.push(
+    { type: 'span', className: 'date sub-body', icon: faCalendarDays, data: `${BlogData[BlogIndex].published_date}` },
     { type: 'span', className: 'words sub-body', icon: faPen, data: `${wordCount} words` },
     { type: 'span', className: 'time sub-body', icon: faClock, data: `${timeTaken} minutes` },
-    { type: 'span', className: 'folder sub-body', icon: faFolderOpen, data: [{ type: 'Link', to: `${BlogData[0].published_folder}`, className: 'blog_links', data: `${BlogData[0].folder_name}` }] }
+    { type: 'span', className: 'folder sub-body', icon: faFolderOpen, data: [{ type: 'a', className: 'folder blog_links', data: `${BlogData[BlogIndex].folder_name}` }] }
 );
 
-export default BlogPage1Data;
+export default BlogPage5Data;

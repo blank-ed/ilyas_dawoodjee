@@ -53,7 +53,7 @@
 }
 
 .collapsableContentCode.open {
-    max-height: 500px;
+    max-height: 5000px;
     font-size: var(--code-font-size);
 }
 
@@ -113,4 +113,8 @@
 
 .i {
     color: purple;
+}
+
+.j {
+    color: yellow;
 }

@@ -1,22 +1,23 @@
-import TestImage from './test.jpg'
+import TestImage from '../test.jpg'
 import { faBars, faCalendarDays, faChevronLeft, faChevronRight, faClock, faFolderOpen, faPen, faSection, faTag } from '@fortawesome/free-solid-svg-icons';
-import BlogData from './BlogData';
+import BlogData from '../BlogData';
+
+const BlogIndex = 2;
 
 const BlogPage3Data = [
     // Title Section
     {
         type: 'div', className: 'BlogPage_TitleSection', data: [
-            { type: 'span', className: 'mainTitle', data: `${BlogData[2].article_title}` },
+            { type: 'span', className: 'mainTitle', data: `${BlogData[BlogIndex].article_title}` },
             {
                 type: 'div', className: 'BlogPage_SubTitleSection', data: []
             },
             {
                 type: 'div', className: 'blog_tags', data: [
                     { type: 'span', className: 'sub-body', icon: faTag },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[2].article_tags[0].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[2].article_tags[0].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[2].article_tags[1].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[2].article_tags[1].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[2].article_tags[2].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[2].article_tags[2].tag_name}, ` }] },
-                    { type: 'span', className: 'sub-body', data: [{ type: 'Link', to: `${BlogData[2].article_tags[3].tag_link}`, className: 'blog_links_inverse', data: `${BlogData[2].article_tags[3].tag_name}` }] }
+                    ...BlogData[BlogIndex].article_tags.map((tag, index) => ({
+                        type: 'span', className: 'sub-body', data: [{ type: 'a', className: 'tag blog_links_inverse', data: `${tag.tag_name}${index < BlogData[BlogIndex].article_tags.length - 1 ? ', ' : ''}` }]
+                    }))
                 ]
             },
             {
@@ -190,10 +191,10 @@ const wordCount = extractAndCountWords(BlogPage3Data);;
 const timeTaken = Math.ceil(wordCount / 200);
 
 BlogPage3Data[0].data[1].data.push(
-    { type: 'span', className: 'date sub-body', icon: faCalendarDays, data: `${BlogData[2].published_date}` },
+    { type: 'span', className: 'date sub-body', icon: faCalendarDays, data: `${BlogData[BlogIndex].published_date}` },
     { type: 'span', className: 'words sub-body', icon: faPen, data: `${wordCount} words` },
     { type: 'span', className: 'time sub-body', icon: faClock, data: `${timeTaken} minutes` },
-    { type: 'span', className: 'folder sub-body', icon: faFolderOpen, data: [{ type: 'Link', to: `${BlogData[2].published_folder}`, className: 'blog_links', data: `${BlogData[2].folder_name}` }] }
+    { type: 'span', className: 'folder sub-body', icon: faFolderOpen, data: [{ type: 'a', className: 'folder blog_links', data: `${BlogData[BlogIndex].folder_name}` }] }
 );
 
 export default BlogPage3Data;

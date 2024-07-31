@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Collapsable.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp, faCircleExclamation, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
+import { faChevronDown, faChevronUp, faCircleExclamation, faTriangleExclamation, faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 
 function Collapsable({ type, title, extraText }) {
     const [isOpen, setIsOpen] = useState(false);

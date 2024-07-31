@@ -40,7 +40,7 @@
 
 .tableofcontentContent.open {
     padding: var(--collapsableContent-padding);
-    max-height: 500px;
+    max-height: max-content;
     display: flex;
     flex-direction: column;
     gap: var(--gap);

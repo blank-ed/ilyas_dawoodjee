@@ -106,6 +106,7 @@
 .Home .Home_Container .article .article_subtitle .article_icon_link {
     font-size: var(--article-text-font-size);
     font-weight: bold;
+    cursor: pointer;
 }
 
 .Home .Home_Container .article .article_subtitle .article_icon_link:hover,
@@ -135,6 +136,7 @@
 .Home .Home_Container .article .article_footer>*:first-child,
 .Home .Home_Container .article .article_footer p a:hover {
     color: var(--hover-color);
+    cursor: pointer;
 }
 
 .Home .Home_Container .article .article_footer>*:first-child:hover {

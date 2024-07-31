@@ -74,7 +74,7 @@ function WorkExperienceSection({ WorkExperienceData }) {
           </div>
           <span className="Each_Section_SubHeader body">
             {data.jobWebsite ? (
-              <><a href={data.jobWebsite} target='_blank' rel='noreferrer' rel='noopener noreferrer'>{data.jobPlace}</a>, </>
+              <><a href={data.jobWebsite} target='_blank' rel='noopener noreferrer'>{data.jobPlace}</a>, </>
             ) : (
               <>{data.jobPlace}</>
             )}
@@ -105,7 +105,7 @@ function EducationSection({ EducationData }) {
           </div>
           <span className="Each_Section_SubHeader body">
             {data.educationLabWebsite ? (
-              <><a href={data.educationLabWebsite} target='_blank' rel='noreferrer' rel='noopener noreferrer'>{data.eudcationLabPlace}</a>, </>
+              <><a href={data.educationLabWebsite} target='_blank' rel='noopener noreferrer'>{data.eudcationLabPlace}</a>, </>
             ) : (
               <>{data.eudcationLabPlace}</>
             )}
