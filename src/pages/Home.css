@@ -13,6 +13,7 @@
     --profile-font-size-paragraph: 1.25rem; /* Font size for profile paragraphs */
     --article-title-font-size: 1.5rem; /* Article title font size */
     --article-text-font-size: 1rem; /* Article body font size */
+    --article-small-text-font-size: 0.75rem; /* Small text for article tags and dates */
 
     --article-image-padding: 1rem; /* Top and bottom padding of the article image */
     --article-text-padding-bottom: 0.75rem; /* Bottom padding between the article texts */
@@ -43,12 +44,7 @@
 .Home .Home_Container .Home_Profile .Home_Avatar img {
     width: var(--user-image-size);
     height: var(--user-image-size);
-    /* transition: transform 0.5s; */
 }
-
-/* .Home .Home_Container .Home_Profile .Home_Avatar img:hover {
-    transform: translateY(-15px);
-} */
 
 .Home .Home_Container .Home_Profile .Home_Subtitle p,
 .Home .Home_Container .Home_Profile .Home_Disclaimer p {
@@ -72,7 +68,50 @@
 
 /* For Each Article Post */
 
-.Home .Home_Container .article .article_image {
+.Home .Home_Container .article {
+    display: flex;
+    flex-direction: column;
+}
+
+.Home .Home_Container .article .article_title h1 {
+    font-weight: bold;
+    line-height: 1.25;
+    font-size: var(--article-title-font-size);
+    padding-bottom: var(--article-text-padding-bottom);
+}
+
+.Home .Home_Container .article .article_title h1 a:hover {
+    color: var(--hover-color);
+}
+
+.Home .Home_Container .article .article_subtitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-bottom: var(--article-text-padding-bottom);
+}
+
+.Home .Home_Container .article .article_subtitle .article_date,
+.Home .Home_Container .article .article_subtitle .article_tags {
+    font-size: var(--article-small-text-font-size);
+}
+
+.Home .Home_Container .article .article_subtitle .article_tags {
+    color: var(--hover-color);
+    border: 0.25px solid var(--hover-color);
+    padding: 0.4rem 0.8rem 0.2rem 0.8rem;
+    border-radius: 1.5rem;
+}
+
+.Home .Home_Container .article .article_subtitle .article_tags:hover {
+    color: var(--lighter-hover-color);
+    cursor: pointer;
+}
+
+
+/* .Home .Home_Container .article .article_image {
     width: 100%;
     padding-bottom: var(--article-image-padding);
     cursor: pointer;
@@ -141,7 +180,7 @@
 
 .Home .Home_Container .article .article_footer>*:first-child:hover {
     color: var(--lighter-hover-color);
-}
+} */
 
 /* For Page Navigation Features */
 
@@ -151,7 +190,7 @@
     gap: 1rem;
 }
 
-.Home .Home_Container .Home_pagination > * {
+.Home .Home_Container .Home_pagination>* {
     display: flex;
     justify-content: center;
     align-items: center;

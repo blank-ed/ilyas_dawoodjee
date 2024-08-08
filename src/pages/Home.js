@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
@@ -9,7 +10,6 @@ import { faArrowRight, faArrowLeft, faTag } from '@fortawesome/free-solid-svg-ic
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import MyImage from '../components/website_data/me.jpg';
-
 import BlogData from '../components/website_data/BlogData';
 
 function Home() {
@@ -100,7 +100,28 @@ function Home() {
         </div>
         {currentPosts.map((data, index) => (
           <div className="article" key={index}>
-            <div className="article_image">
+            <div className="article_title">
+              <h1><Link to={data.article_link}>{data.article_title}</Link></h1>
+            </div>
+            <div className="article_subtitle">
+              {/* <span className='article_date'>{data.published_date}</span> */}
+              {data.article_tags.map((tag, index) => (
+                <a className='article_tags' key={index} onClick={() => handleTagClick(tag.tag_name)}>
+                  {tag.tag_name.toUpperCase()}
+                </a>
+              ))}
+            </div>
+            <div className="article_data">
+              <div className="article_image">
+                <Link to={data.article_link}><img src={data.image} alt="" /></Link>
+              </div>
+              <div className="article_abstract">
+                <p>{data.article_abstract}</p>
+              </div>
+            </div>
+
+
+            {/* <div className="article_image">
               <Link to={data.article_link}><img src={data.image} alt="" /></Link>
             </div>
             <div>
@@ -123,7 +144,7 @@ function Home() {
                   ))}
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         ))}
         <div className="Home_pagination">
