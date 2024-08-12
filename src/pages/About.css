@@ -122,3 +122,14 @@
     border-collapse: separate;
     border-spacing: 0rem var(--text-margin);
 }
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information ul {
+    list-style: inside;
+    text-indent: calc(-1 * var(--about-ul-text-indent-and-padding-left));
+    padding-left: var(--about-ul-text-indent-and-padding-left);
+    margin: var(--text-margin) 0rem;
+}
+
+.About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information li:not(:last-child) {
+    margin-bottom: var(--text-margin);
+}
