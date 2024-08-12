@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ilyas_dawoodjee/static/css/main.1059dd71.css",
-    "main.js": "/ilyas_dawoodjee/static/js/main.51966074.js",
+    "main.css": "/ilyas_dawoodjee/static/css/main.1a8659cc.css",
+    "main.js": "/ilyas_dawoodjee/static/js/main.bf639cd4.js",
     "static/media/me.jpg": "/ilyas_dawoodjee/static/media/me.788b4294e6d4037fb786.jpg",
     "static/media/Image8.png": "/ilyas_dawoodjee/static/media/Image8.dfba2baa52fa9f8db611.png",
     "static/media/Image2.jpg": "/ilyas_dawoodjee/static/media/Image2.4b249d4415a3e5e62797.jpg",
@@ -13,11 +13,11 @@
     "static/media/Image5.png": "/ilyas_dawoodjee/static/media/Image5.6fa9fff925091a9d4017.png",
     "static/media/Image6.png": "/ilyas_dawoodjee/static/media/Image6.9ab66c127a8934630d10.png",
     "index.html": "/ilyas_dawoodjee/index.html",
-    "main.1059dd71.css.map": "/ilyas_dawoodjee/static/css/main.1059dd71.css.map",
-    "main.51966074.js.map": "/ilyas_dawoodjee/static/js/main.51966074.js.map"
+    "main.1a8659cc.css.map": "/ilyas_dawoodjee/static/css/main.1a8659cc.css.map",
+    "main.bf639cd4.js.map": "/ilyas_dawoodjee/static/js/main.bf639cd4.js.map"
   },
   "entrypoints": [
-    "static/css/main.1059dd71.css",
-    "static/js/main.51966074.js"
+    "static/css/main.1a8659cc.css",
+    "static/js/main.bf639cd4.js"
   ]
 }
