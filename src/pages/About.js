@@ -82,11 +82,16 @@ function WorkExperienceSection({ WorkExperienceData }) {
             <>, {data.jobLocation}</>
           </span>
           <span className="Each_Section_Information body">
-            <ul>
-              {data.jobPoints.map((dataPoints, index) => (
-                <li key={index}>{dataPoints}</li>
-              ))}
-            </ul>
+            <table>
+              <tbody>
+                {data.jobPoints.map((dataPoints, index) => (
+                  <tr key={`row-${index}`}>
+                    <td className='point_number'>•&nbsp;&nbsp;&nbsp;</td>
+                    <td className='point_data'>{dataPoints}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </span>
         </div>
       ))}
@@ -113,11 +118,16 @@ function EducationSection({ EducationData }) {
             <>, {data.educationLocation}</>
           </span>
           <span className="Each_Section_Information body">
-            <ul>
-              {data.educationPoints.map((dataPoints, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: dataPoints }}></li>
-              ))}
-            </ul>
+            <table>
+              <tbody>
+                {data.educationPoints.map((dataPoints, index) => (
+                  <tr key={`row-${index}`}>
+                    <td className='point_number'>•&nbsp;&nbsp;&nbsp;</td>
+                    <td className='point_data' dangerouslySetInnerHTML={{ __html: dataPoints }}></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </span>
         </div>
       ))}
