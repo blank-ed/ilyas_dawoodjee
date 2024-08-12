@@ -4,26 +4,13 @@
 
 Need to design:
 - repsonsive layout
-- make 5 pages based on Samuel Proells data just as a filler and to test shit
-- redesign the styling of pages
 
 */
 
 :root {
     /*  */
-    --main-margin: 2.5rem; /* Top and bottom margin */
-    --content-width: 80%; /* Width of the content */
-
-    --mainTitle-font-size: 2rem; /* Font size for the main page title */
-    --sectionTitle-font-size: 1.75rem; /* Font size for each section title */
-    --subSectionTitle-font-size: 1.4rem; /* Font size for each sub section title */
-    --body-text-font-size: 1rem; /* Font size for the body text */
     --code-font-size: 0.8rem; /* Font size for the code text */
-    --sub-body-text-font-size: 0.75rem; /* Font size for the sub body text */
 
-    --hover-color: rgb(75, 150, 0); /* Hover color */
-    --lighter-hover-color: rgb(100, 200, 0); /* Lighter hover color */
-    --shade-color: rgb(158, 158, 158); /* Shade color eg. Disclaimer Text */
     --code-background-color: rgba(44, 71, 114, 0.3);
     --code-color: #ffa17a;
 
@@ -33,16 +20,33 @@ Need to design:
     --blog-footer-animation: 10px; /* The moving left and right animation for the blog footer next links */
     --blog-page-subtitle-section-gap: 1rem; /* Gap between the blog page's subtitle (eg. date, no. words, time, folder name) */
 
-    --general-margin: 0.5rem; /* General margin that I use for top and bottom */
-    --section-title-margin-top: 0.75rem; /* Margin top for each sections title */
-    --section-title-margin-bottom: 0.25rem; /* Margin bottom for each sections title */
-    --subSection-title-margin-top: 1rem; /* Margin top for each sub sections title */
-    --subSection-title-margin-bottom: 0.5rem; /* Margin bottom for each sub sections title */
-    --reference-section-table-padding-top-bottom: 1rem; /* Top and bottom padding for the reference section */
-    --reference-padding-left: 2rem; /* Left padding for the references */
-    --blog-footer-margin-top: 2rem; /* Margin top for the blog footer (left link and right link container) */
+    --reference-section-table-padding-top-bottom: clamp(0.5rem, 2vw, 1rem); /* Top and bottom padding for the reference section */
+    --reference-padding-left: clamp(1rem, 2vw, 2rem); /* Left padding for the references */
+    --blog-footer-margin-top: clamp(1rem, 2vw, 2rem); /* Margin top for the blog footer (left link and right link container) */
+
+    --code-padding-top-bottom: 0.3rem;
+    --code-padding-left-right: 0.4rem;
 }
 
+@media (max-width: 1000px) {
+    :root {
+        --code-font-size: 0.6rem !important;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --code-font-size: 0.4rem !important;  
+        --code-padding-top-bottom: 0.15rem;
+        --code-padding-left-right: 0.2rem; 
+    }
+}
+
+/* @media (max-width: 1000px) {
+    :root {
+        
+    }
+} */
 
 /* General formatting for the whole page */
 
@@ -66,13 +70,13 @@ Need to design:
 .BlogPage .BlogPage_Container .body {
     text-align: justify;
     display: inline-block;
-    font-size: var(--body-text-font-size);
+    font-size: var(--text-font-size);
     line-height: var(--line-height);
-    margin: var(--general-margin) 0rem;
+    margin: var(--text-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container .sub-body {
-    font-size: var(--sub-body-text-font-size);
+    font-size: var(--subtext-font-size);
 }
 
 .BlogPage .BlogPage_Container .sectionIcon svg path {
@@ -87,8 +91,8 @@ Need to design:
 .BlogPage .BlogPage_Container .section_title {
     display: inline-block;
     font-weight: bold;
-    font-size: var(--sectionTitle-font-size);
-    margin: var(--section-title-margin-top) 0rem var(--section-title-margin-bottom) 0rem;
+    font-size: var(--title-font-size);
+    margin: calc(var(--title-margin) * var(--title-multiplier)) 0rem var(--title-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container strong {
@@ -99,22 +103,22 @@ Need to design:
     background-color: var(--code-background-color);
     color: var(--code-color);
     font-size: var(--code-font-size);
-    padding: 0.3rem 0.4rem;
+    padding: var(--code-padding-top-bottom) var(--code-padding-left-right);
     letter-spacing: 0.4;
     border-radius: 0.25rem;
 }
 
 .BlogPage .BlogPage_Container .subSection_title {
-    font-size: var(--subSectionTitle-font-size);
+    font-size: var(--subtitle-font-size);
     font-weight: bold;
-    margin: var(--subSection-title-margin-top) 0rem var(--subSection-title-margin-bottom) 0rem;
+    margin: calc(var(--subtitle-margin) * var(--subtitle-multiplier)) 0rem var(--subtitle-margin) 0rem;
     display: inline-block;
 }
 
 /* Formatting for the rest of the page */
 
 .BlogPage .BlogPage_Container {
-    width: var(--content-width);
+    width: var(--main-content-width);
     margin: var(--main-margin) auto;
     display: flex;
     flex-direction: column;
@@ -124,18 +128,18 @@ Need to design:
     font-size: var(--mainTitle-font-size);
     font-weight: bold;
     display: inline-block;
-    margin-bottom: var(--general-margin);
+    margin-bottom: var(--mainTitle-margin);
 }
 
 .BlogPage .BlogPage_Container .BlogPage_SubTitleSection {
     display: flex;
     gap: var(--blog-page-subtitle-section-gap);
-    margin: var(--general-margin) 0rem;
+    margin: var(--subtext-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container .Blog_Image {
     display: inline-block;
-    margin: var(--general-margin) auto;
+    margin: var(--image-margin) auto;
     display: block;
 }
 
@@ -144,9 +148,13 @@ Need to design:
     text-indent: calc(-1 * var(--ul-text-indent-and-padding-left));
     padding-left: var(--ul-text-indent-and-padding-left);
     display: block;
-    font-size: var(--body-text-font-size);
+    font-size: var(--text-font-size);
     line-height: var(--line-height);
-    margin: var(--general-margin) 0rem;
+    margin: var(--text-margin) 0rem;
+}
+
+.BlogPage .BlogPage_Container li {
+    margin-bottom: var(--text-margin);
 }
 
 .BlogPage .BlogPage_Container .reference_section_table {
@@ -162,7 +170,7 @@ Need to design:
 }
 
 .BlogPage .BlogPage_Container .blog_tags {
-    margin: var(--general-margin) 0rem;
+    margin: var(--subtext-margin) 0rem;
 }
 
 .BlogPage .BlogPage_Container .blog_tags > * {

@@ -1,3 +1,20 @@
+:root {
+    --Footer-width: 80%;
+    --margin-padding-gap: clamp(0.3rem, 1vw, 1rem);
+}
+
+@media (max-width: 1400px) {
+    :root {
+        --Footer-width: 85%;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --Footer-width: 90%;
+    }
+}
+
 .Footer {
     margin-top: auto;
 }
@@ -7,17 +24,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    width: 80%;
+    gap: var(--margin-padding-gap);
+    padding: var(--margin-padding-gap);
+    width: var(--Footer-width);
     margin: 0 auto;
 }
 
 .Footer .Footer_Sub p {
-    margin: 0 1rem;
+    margin: 0 var(--margin-padding-gap);
     text-decoration: none;
     color: lightgray;
-    font-size: 1rem;
+    font-size: var(--text-font-size);
 }
 
 .Footer .Footer_Sub .homePage {
@@ -31,9 +48,9 @@
 .Footer .Footer_Sub .Footer_Links {
     display: flex;
     gap: 0.5rem;
-    font-size: 1.5rem;
+    font-size: var(--title-font-size);
 }
 
 .Footer .Footer_Sub .Footer_Links a:hover svg path {
-    color: rgb(75, 150, 0);
+    color: var(--hover-color);
 }

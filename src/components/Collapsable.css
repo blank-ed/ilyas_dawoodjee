@@ -1,7 +1,7 @@
 :root {
-    --collapsableContainer-margin: 1rem; /* Margin for the container */
-    --collapsableTitle-padding: 10px; /* Padding for the title */
-    --collapsableContent-padding: 10px; /* Padding for the content in collapsable */
+    --collapsableContainer-margin: clamp(0.5rem, 2vw, 1rem); /* Margin for the container */
+    --collapsableTitle-padding: clamp(0.25rem, 1vw, 0.625rem); /* Padding for the title */
+    --collapsableContent-padding: clamp(0.25rem, 1vw, 0.625rem); /* Padding for the content in collapsable */
 }
 
 .collapsableContainer {
@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     transition: background-color 0.3s ease;
+    font-size: var(--text-font-size);
 }
 
 .collapsableContent {

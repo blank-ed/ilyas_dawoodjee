@@ -2,7 +2,6 @@
     --collapsableContainer-margin: 1rem; /* Margin for the container */
     --collapsableTitle-padding: 10px; /* Padding for the title */
     --collapsableContent-padding: 10px; /* Padding for the content in collapsable */
-    --code-font-size: 0.8rem; /* Font size for the code */
     --codeNumber-minimum-width: 1.6rem;
     --codeText-padding-left: 0.5rem;
 }
@@ -22,6 +21,7 @@
     background-color: rgba(3, 94, 38, 0.5);
     padding: var(--collapsableTitle-padding);
     cursor: pointer;
+    font-size: var(--text-font-size);
 }
 
 .collapseButton {

@@ -1,10 +1,10 @@
 :root {
-    --collapsableContainer-margin: 1rem; /* Margin for the container */
-    --collapsableTitle-padding: 10px; /* Padding for the title */
-    --collapsableContent-padding: 10px; /* Padding for the content in collapsable */
-    --gap: 1rem;
-    --tableofcontentsText-padding-left: 0.5rem; /* This is the padding between the border and the start of text */ 
-    --tableofcontent-subTitle-margin-left: 1.5rem; /* This is the margin to move the sub section titles to the right */
+    --collapsableContainer-margin: clamp(0.5rem, 2vw, 1rem); /* Margin for the container */
+    --collapsableTitle-padding: clamp(0.25rem, 1vw, 0.625rem); /* Padding for the title */
+    --collapsableContent-padding: clamp(0.25rem, 1vw, 0.625rem); /* Padding for the content in collapsable */
+    --gap: clamp(0.5rem, 2vw, 1rem);
+    --tableofcontentsText-padding-left: clamp(0.25rem, 1vw, 0.5rem); /* This is the padding between the border and the start of text */ 
+    --tableofcontent-subTitle-margin-left: clamp(0.75rem, 2vw, 1.5rem); /* This is the margin to move the sub section titles to the right */
 }
 
 .tableofcontentContainer {
@@ -25,6 +25,7 @@
     justify-content: space-between;
     transition: background-color 0.3s ease;
     background-color: rgba(105, 42, 107, 0.5);
+    font-size: var(--text-font-size);
 }
 
 .tableofcontentContent {

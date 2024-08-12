@@ -398,7 +398,7 @@ const BlogPage1Data = [
                     [{ type: 'b', code: '    fig, axarr = utils.plot_recognizer_predictions(test_samples, recognizer, ' }, { type: 'h', code: '5' }, { type: 'b', code: ')' }]
                 ]
             },
-            { type: 'img', className: 'BlogImage', data: Image4 },
+            { type: 'img', className: 'Blog_Image', data: Image4 },
 
             // Third Section
             { type: 'span', className: 'section_title sectionIcon', id: 'third', icon: faSection, data: 'Detailed performance evaluation' },
@@ -448,7 +448,7 @@ const BlogPage1Data = [
                     [{ type: 'b', code: '    result = recognizer.recognize(mp_image)' }]
                 ]
             },
-            { type: 'img', className: 'BlogImage', data: Image5 },
+            { type: 'img', className: 'Blog_Image', data: Image5 },
 
             // Third-Second Section
             { type: 'span', className: 'subSection_title sectionIcon', id: 'third_second', icon: faBars, data: 'Per-class accuracy' },
@@ -469,7 +469,7 @@ const BlogPage1Data = [
                     [{ type: 'b', code: '    result = recognizer.recognize(mp_image)' }]
                 ]
             },
-            { type: 'img', className: 'BlogImage', data: Image6 },
+            { type: 'img', className: 'Blog_Image', data: Image6 },
             { type: 'span', className: 'body', data: 'Actually incorrect classifications mostly come from M, N, T, S and E. This makes intuitive sense, since these gestures are very similar with slight variations of the thumb position.' },
             {
                 type: 'CodeBlock', title: "Python", extraText: [

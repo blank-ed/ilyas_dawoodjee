@@ -1,7 +1,31 @@
+:root {
+    --left-right-border-radius: 5rem;
+    --padding-and-margin: clamp(0.25rem, 2vw, 1rem);
+    --NavBar-width: 80%;
+}
+
+@media (max-width: 1600px) {
+    :root {
+        --left-right-border-radius: 0rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    :root {
+        --NavBar-width: 85%;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --NavBar-width: 90%;
+    }
+}
+
 .NavBar {
     background-color: #313436;
-    border-bottom-left-radius: 5rem;
-    border-bottom-right-radius: 5rem;
+    border-bottom-left-radius: var(--left-right-border-radius);
+    border-bottom-right-radius: var(--left-right-border-radius);
     position: sticky;
     top: 0px;
     z-index: 99999;
@@ -10,15 +34,15 @@
 .NavBar_Sub {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
-    width: 80%;
+    padding: var(--padding-and-margin);
+    width: var(--NavBar-width);
     margin: 0 auto;
 }
 
 .NavBar_Sub .NavBar_left > * {
-    margin: 0 1rem;
-    color: lightgray;
-    font-size: 1.5rem;
+    margin: 0 var(--padding-and-margin);
+    color: var(--lighter-shade-color);
+    font-size: var(--title-font-size);
     cursor: pointer;
 }
 
@@ -28,19 +52,19 @@
 }
 
 .NavBar_Sub .NavBar_right > * {
-    margin: 0 1rem;
+    margin: 0 var(--padding-and-margin);
     text-decoration: none;
-    color: lightgray;
-    font-size: 16px;
+    color: var(--lighter-shade-color);
+    font-size: var(--text-font-size);
     cursor: pointer;
 }
 
 .NavBar_Sub .NavBar_left > *:hover,
 .NavBar_Sub .NavBar_right > *:hover {
-    color: rgb(75, 150, 0);;
+    color: var(--hover-color);
 }
 
 .selected {
-    color: rgb(75, 150, 0) !important;
+    color: var(--hover-color) !important;
     font-weight: 900;
 }

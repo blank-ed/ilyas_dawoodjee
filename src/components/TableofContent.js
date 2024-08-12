@@ -29,7 +29,7 @@ function TableofContent({ contentText }) {
         <div className={`tableofcontentContainer`}>
             <button className={`tableofcontentTitle`} onClick={toggleCollapse}>
                 <span className="button-title body">
-                    <FontAwesomeIcon icon={faTable} />&nbsp;&nbsp;TABLE OF CONTENTS
+                    <FontAwesomeIcon icon={faTable} />&nbsp;&nbsp;Table of Contents
                 </span>
                 <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} />
             </button>

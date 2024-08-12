@@ -17,7 +17,7 @@ function Projects() {
   // Count tag occurrences and extract titles
   const tagCount = {};
   const tagTitles = {};
-  
+
   BlogData.forEach((value) => {
     value.article_tags.forEach((tag) => {
       if (!tagCount[tag.tag_name]) {
@@ -154,20 +154,27 @@ function Projects() {
       ...provided,
       borderRadius: '4px',
       borderColor: 'green', // Change border color to green
+      fontSize: 'var(--text-font-size)',
       boxShadow: 'none',
       color: 'white',
       '&:hover': {
         borderColor: 'green', // Change hover border color to green
       },
-      width: '30rem',
-      backgroundColor: 'inherit' // Inherit background color
+      width: 'clamp(10rem, 50vw, 30rem)',
+      backgroundColor: 'inherit', // Inherit background color
+      '& svg': {
+        height: 'var(--subtitle-font-size)',
+        width: 'var(--subtitle-font-size)'
+      },
+      minHeight: '16px'
     }),
     menu: (provided) => ({
       ...provided,
       zIndex: 9999, // Ensure dropdown is on top
       color: 'white',
       border: '1px solid green', // Change dropdown border color to green
-      backgroundColor: '#212121' // Inherit background color
+      backgroundColor: '#212121', // Inherit background color
+      fontSize: 'var(--text-font-size)'
     }),
     option: (provided, state) => ({
       ...provided,
@@ -195,6 +202,10 @@ function Projects() {
       '&:hover': {
         backgroundColor: 'transparent', // Ensure no background on hover
         color: 'darkgreen' // Change hover cross color to dark green
+      },
+      '& svg': {
+        height: 'var(--text-font-size)',
+        width: 'var(--text-font-size)'
       }
     })
   };

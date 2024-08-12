@@ -101,7 +101,7 @@ function EducationSection({ EducationData }) {
         <div className="About_Each_Section" key={index}>
           <div className="Each_Section_Header">
             <span className="Each_Section_Title">{data.educationTitle}</span>
-            <span className='Each_Section_Date'>{data.educationDuration}</span>
+            <span className='Each_Section_Date shade'>{data.educationDuration}</span>
           </div>
           <span className="Each_Section_SubHeader body">
             {data.educationLabWebsite ? (

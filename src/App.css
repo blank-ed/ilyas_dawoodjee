@@ -1,3 +1,71 @@
+:root {
+  --main-content-width: 60%;
+
+  --main-margin: clamp(1rem, 2vw, 2.5rem); /* Top and bottom margin */
+  --gap-section: clamp(1rem, 2vw, 2.5rem); /* Gap between each section */
+  --gap-body: clamp(0.5rem, 2vw, 1rem); /* Gap for the profile data and profile links and article footer */
+
+  --background-color: #212121;
+  --hover-color: rgb(75, 150, 0); /* Hover color */
+  --lighter-hover-color: rgb(100, 200, 0); /* Lighter hover color */
+  --shade-color: rgb(158, 158, 158); /* Shade color eg. Disclaimer Text */
+  --lighter-shade-color: rgb(200, 200, 200);
+
+  --mainTitle-font-size: 2rem; /* Font size for the main page title */
+  --title-font-size: 1.5rem; /* Font size for each page title section */
+  --subtitle-font-size: 1.25rem; /* Font size for each page sub-title section */
+  --text-font-size: 1rem; /* Text font size */
+  --subtext-font-size: 0.75rem; /* Sub-text font size section */
+
+  --image-margin: clamp(0.5rem, 2vw, 1rem);
+  --mainTitle-margin: clamp(calc(0.75rem / 2), 2vw, 0.75rem); /* Margin below the main title */
+  --title-margin: clamp(0.25rem, 2vw, 0.5rem); /* Margin below each title */
+  --subtitle-margin: clamp(0.2rem, 2vw, 0.4rem); /* Margin below each subtitle */
+  --text-margin: clamp(0.15rem, 2vw, 0.3rem); /* Margin below text */
+  --subtext-margin: clamp(0.1rem, 1vw, 0.25rem); /* Margin below subtext */
+
+  --title-multiplier: 4;
+  --subtitle-multiplier: 3;
+}
+
+@media (max-width: 1400px) {
+  :root {
+    --main-content-width: 70%;
+  }
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --mainTitle-font-size: 1.75rem;
+    --title-font-size: 1.25rem;
+    --subtitle-font-size: 1rem;
+    --text-font-size: 0.75rem;
+    --subtext-font-size: 0.5rem;
+
+    --title-multiplier: 3;
+    --subtitle-multiplier: 2;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --mainTitle-font-size: 1rem;
+    --title-font-size: 0.8rem;
+    --subtitle-font-size: 0.65rem;
+    --text-font-size: 0.5rem;
+    --subtext-font-size: 0.4rem;
+
+    --title-multiplier: 2;
+    --subtitle-multiplier: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --main-content-width: 90%;
+  }
+}
+
 /* makes sizing simpler */
 
 *,
@@ -20,7 +88,7 @@
 /* dark mode user-agent-styles */
 
 html {
-  background-color: #212121;
+  background-color: var(--background-color);
 }
 
 /* min body height */
@@ -51,31 +119,8 @@ video {
   margin-right: auto;
 }
 
-/* .title {
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-.body {
-  font-size: 1rem;
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.5;
-  color: white;
-}
-
-.sub_body {
-  font-size: 0.875rem;
-  line-height: 1.5;
-} */
-
 p {
-  font-size: 1rem;
+  font-size: var(--text-font-size);
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.5;

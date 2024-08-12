@@ -1,39 +1,54 @@
+:root {
+    --section-gap: clamp(1rem, 2vw, 3rem);
+    --subTitle-margin-bottom: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* @media (max-width: 1400px) {
+    :root {
+        
+    }
+}
+  
+@media (max-width: 1000px) {
+    :root {
+        
+    }
+}
+  
+@media (max-width: 700px) {
+    :root {
+        
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        
+    }
+} */
+
 .Projects .Projects_Container {
-    width: 60%;
-    margin: 2.5rem auto;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    width: var(--main-content-width);
+    margin: var(--main-margin) auto;
 }
 
 .Projects .Projects_Container .Projects_Title_Section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--mainTitle-margin);
 }
 
 .Projects .Projects_Title {
-    font-size: 2rem;
+    font-size: var(--mainTitle-font-size);
     font-weight: bold;
-}
-
-.Projects .Projects_Button {
-    background-color: inherit;
-    border: 2px solid green; /* change color later */
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-}
-
-.Projects .Projects_Button:hover {
-    background-color: green;
-    cursor: pointer;
 }
 
 .Projects .Project_Contents {
     display: flex;
     flex-direction: column;
-    gap: 3em;
 }
 
 .Projects .Project_Contents div {
@@ -42,9 +57,9 @@
 }
 
 .Projects .Project_Contents .subTitle {
-    font-size: 1.4rem;
+    font-size: var(--title-font-size);
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin: calc(var(--title-margin) * var(--title-multiplier)) 0rem var(--title-margin) 0rem;
 }
 
 .Projects .Project_Contents .all_data {
@@ -54,8 +69,8 @@
 }
 
 .Projects .Project_Contents .data {
-    font-size: 1rem;
-    margin: 0.25rem 0rem 0.25rem 1.5rem;
+    font-size: var(--text-font-size);
+    margin: var(--text-margin) 0rem var(--text-margin) 1.5rem;
 }
 
 .Projects .Project_Contents .data:first-child {
@@ -69,7 +84,7 @@
 }
 
 .Projects .Project_Contents .data .article_link:hover {
-    color: green;
+    color: var(--hover-color);
 }
 
 .highlight,
@@ -77,5 +92,3 @@
     color: yellow; /* highlight color */
     transition: color 0.5s ease-in-out;
 }
-
-

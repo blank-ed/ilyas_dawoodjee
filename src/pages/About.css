@@ -1,32 +1,38 @@
 :root {
     /*  */
-    --gap-section: 2.5rem; /* Gap between each section */
-    --main-margin: 2.5rem; /* Top and bottom margin */
-    --content-width: 60%; /* Width of the content */
-    --gap-body: 1rem; /* Gap for the profile data and profile links and article footer */
-    --user-image-size: 250px; /* Size of the user image */
-    --user-image-border-radius: 1rem; /* Border radius of the user image */
+    --about-user-image-size: clamp(6.25rem, 20vw, 15.625rem); /* Size of the user image */
+    --user-image-border-radius: clamp(0.5rem, 20vw, 1rem); /* Border radius of the user image */
 
-    --article-title-font-size: 1.75rem; /* Article title font size */
-    --article-subtitle-font-size: 1.5rem; /* This is for the article subtitle font size eg. Work Experience */
-    --article-text-font-size: 1rem; /* Article body font size */
-    --article-subtext-font-size: 0.75rem; /* This is for the subtext font size eg. the date */
-
-    --hover-color: rgb(75, 150, 0); /* Hover color */
-    --lighter-hover-color: rgb(100, 200, 0); /* Lighter hover color */
-    --shade-color: rgb(158, 158, 158); /* Shade color eg. Disclaimer Text */
     --about-section-background-color: rgb(36, 41, 53); 
-    --about-section-border-color: gray;
+    --about-section-border-color: var(--shade-color);
 
-    --article-title-margin: 1rem; /* Margin bottom for the main article title eg. Work Experience */
-    --about-section-padding-top-bottom: 0.75rem; /* Top and bottom padding for each about section */
-    --about-section-padding-left-right: 1rem; /* Left and right padding for each about section */
-    --about-section-title-subtitle-padding-bottom: 0.75rem; /* padding bottom for each section title (eg. Research Engineer) and its subtitle (Position Name etc) */
-    --ul-margin-left-and-li-margin-bottom: 0.5rem;
-    --ul-text-indent-and-padding-left: 20px;
+    --about-section-padding-top-bottom: clamp(0.3rem, 2vw, 0.75rem); /* Top and bottom padding for each about section */
+    --about-section-padding-left-right: clamp(0.5rem, 2vw, 1rem); /* Left and right padding for each about section */
+    --about-ul-text-indent-and-padding-left: 20px;
+}
 
-    --article-text-padding-bottom: 0.75rem; /* Bottom padding between the article texts */
-    --article-end-padding-bottom: 2.5rem; /* Bottom padding at the end of the article */
+@media (max-width: 1400px) {
+    :root {
+        --about-ul-text-indent-and-padding-left: 20px;
+    }
+}
+  
+@media (max-width: 1000px) {
+    :root {
+        --about-ul-text-indent-and-padding-left: 16px;
+    }
+}
+  
+@media (max-width: 700px) {
+    :root {
+        --about-ul-text-indent-and-padding-left: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --about-ul-text-indent-and-padding-left: 12px;
+    }
 }
 
 /* General formatting for the whole page */
@@ -41,11 +47,13 @@
 }
 
 .About .About_Container .shade {
+    font-size: var(--text-font-size);
     color: var(--shade-color);
+    margin: var(--text-margin) 0rem;
 }
 
 .About .About_Container .body {
-    font-size: var(--article-text-font-size);
+    font-size: var(--text-font-size);
     line-height: 1.25;
 }
 
@@ -60,31 +68,33 @@
 }
 
 .About .About_Container {
-    width: var(--content-width);
+    width: var(--main-content-width);
     margin: var(--main-margin) auto;
-    gap: var(--gap-section);
+    /* gap: var(--gap-section); */
 }
 
 .About .About_Container .About_Avatar {
     justify-content: center;
     align-items: center;
-    gap: var(--gap-body);
+    /* gap: var(--gap-body); */
 }
 
 .About .About_Container .About_Avatar img {
-    width: var(--user-image-size);
-    height: var(--user-image-size);
+    width: var(--about-user-image-size);
+    height: var(--about-user-image-size);
     border-radius: var(--user-image-border-radius);
+    margin-bottom: var(--image-margin);
 }
 
 .About .About_Container .About_Paragraph .body {
     line-height: 1.5;
+    margin: var(--text-margin) 0rem;
 }
 
 .About .About_Container .About_Main_Section .About_Main_Section_Title {
     font-weight: 900;
-    font-size: var(--article-title-font-size);
-    margin-bottom: var(--article-title-margin);
+    font-size: var(--title-font-size);
+    margin: calc(var(--title-margin) * var(--title-multiplier)) 0rem var(--title-margin) 0rem;
 }
 
 .About .About_Container .About_Main_Section .About_Each_Section {
@@ -96,30 +106,33 @@
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Header {
     display: flex;
     justify-content: space-between;
+    gap: 0.5rem;
     align-items: center;
-    padding-bottom: var(--about-section-title-subtitle-padding-bottom);
+    margin: var(--subtitle-margin) 0rem ;
 }
 
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Header .Each_Section_Title {
-    font-size: var(--article-subtitle-font-size);
+    font-size: var(--subtitle-font-size);
     font-weight: bold;
 }
 
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Header .Each_Section_Date {
-    font-size: var(--article-subtext-font-size);
+    font-size: var(--subtext-font-size);
+    margin: 0rem !important;
+
 }
 
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_SubHeader {
-    padding-bottom: var(--about-section-title-subtitle-padding-bottom);
+    margin: var(--text-margin) 0rem;
 }
 
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information ul {
-    margin-left: var(--ul-margin-left-and-li-margin-bottom);
     list-style: inside;
-    text-indent: calc(-1 * var(--ul-text-indent-and-padding-left));
-    padding-left: var(--ul-text-indent-and-padding-left);
+    text-indent: calc(-1 * var(--about-ul-text-indent-and-padding-left));
+    padding-left: var(--about-ul-text-indent-and-padding-left);
+    margin: var(--text-margin) 0rem;
 }
 
 .About .About_Container .About_Main_Section .About_Each_Section .Each_Section_Information li:not(:last-child) {
-    margin-bottom: var(--ul-margin-left-and-li-margin-bottom);
+    margin-bottom: var(--text-margin);
 }

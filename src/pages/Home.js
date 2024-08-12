@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faFolderOpen } from '@fortawesome/free-regular-svg-icons';
-import { faArrowRight, faArrowLeft, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft, faTag, faCalendar, faClock } from '@fortawesome/free-solid-svg-icons';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -104,7 +104,10 @@ function Home() {
               <h1><Link to={data.article_link}>{data.article_title}</Link></h1>
             </div>
             <div className="article_subtitle">
-              {/* <span className='article_date'>{data.published_date}</span> */}
+              <span className='article_text'><FontAwesomeIcon className='article_icons' icon={faCalendar} />&nbsp;&nbsp;{data.published_date}</span>
+              <span>|</span>
+              <span className='article_text'><a className='article_icon_link' onClick={() => handleFolderClick(data.folder_name)}><FontAwesomeIcon className='article_icons' icon={faFolderOpen} />&nbsp;&nbsp;{data.folder_name}</a></span>
+              <span>|</span>
               {data.article_tags.map((tag, index) => (
                 <a className='article_tags' key={index} onClick={() => handleTagClick(tag.tag_name)}>
                   {tag.tag_name.toUpperCase()}
@@ -112,39 +115,12 @@ function Home() {
               ))}
             </div>
             <div className="article_data">
-              <div className="article_image">
-                <Link to={data.article_link}><img src={data.image} alt="" /></Link>
-              </div>
+              <Link className='article_image' to={data.article_link}><img src={data.image} alt="" /></Link>
               <div className="article_abstract">
                 <p>{data.article_abstract}</p>
-              </div>
-            </div>
-
-
-            {/* <div className="article_image">
-              <Link to={data.article_link}><img src={data.image} alt="" /></Link>
-            </div>
-            <div>
-              <div className="article_title">
-                <h1><Link to={data.article_link}>{data.article_title}</Link></h1>
-              </div>
-              <div className="article_subtitle">
-                <span className='article_icon_text'>Published on {data.published_date} included in</span>
-                &nbsp;
-                <span><a className='article_icon_link' onClick={() => handleFolderClick(data.folder_name)}><FontAwesomeIcon className='Links' icon={faFolderOpen} /> {data.folder_name}</a></span>
-              </div>
-              <div className="article_abstract">
-                <p>{data.article_abstract}</p>
-              </div>
-              <div className="article_footer">
                 <Link to={data.article_link}>Read More</Link>
-                <p><FontAwesomeIcon className='article_icon' icon={faTag} />
-                  {data.article_tags.map((tag, index) => (
-                    <a key={index} onClick={() => handleTagClick(tag.tag_name)}> {tag.tag_name}{index !== data.article_tags.length - 1 && <span>, </span>}</a>
-                  ))}
-                </p>
               </div>
-            </div> */}
+            </div>
           </div>
         ))}
         <div className="Home_pagination">
