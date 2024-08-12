@@ -8,30 +8,18 @@
 
     --about-section-padding-top-bottom: clamp(0.3rem, 2vw, 0.75rem); /* Top and bottom padding for each about section */
     --about-section-padding-left-right: clamp(0.5rem, 2vw, 1rem); /* Left and right padding for each about section */
-    --about-ul-text-indent-and-padding-left: 20px;
-}
-
-@media (max-width: 1400px) {
-    :root {
-        --about-ul-text-indent-and-padding-left: 20px;
-    }
+    --about-ul-text-indent-and-padding-left: 1.25rem;
 }
   
 @media (max-width: 1000px) {
     :root {
-        --about-ul-text-indent-and-padding-left: 16px;
+        --about-ul-text-indent-and-padding-left: 1rem;
     }
 }
   
 @media (max-width: 700px) {
     :root {
-        --about-ul-text-indent-and-padding-left: 12px;
-    }
-}
-
-@media (max-width: 500px) {
-    :root {
-        --about-ul-text-indent-and-padding-left: 12px;
+        --about-ul-text-indent-and-padding-left: 0.75rem;
     }
 }
 
@@ -76,7 +64,6 @@
 .About .About_Container .About_Avatar {
     justify-content: center;
     align-items: center;
-    /* gap: var(--gap-body); */
 }
 
 .About .About_Container .About_Avatar img {
