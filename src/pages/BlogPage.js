@@ -166,6 +166,10 @@ function BlogPage() {
             {element.data.map((child, childIndex) => renderData(child, childIndex, uniqueKey))}
           </td>
         );
+      case 'bullet_points':
+        return (
+          <>{element.data}&nbsp;&nbsp;&nbsp;</>
+        )
       default:
         return null;
     }

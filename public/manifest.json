@@ -1,7 +1,12 @@
 {
-  "short_name": "ID",
-  "name": "Ilyas Dawoodjee - Portfolio",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
+    {
+      "src": "%PUBLIC_URL%/logo.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
     {
       "src": "logo192.png",
       "type": "image/png",

@@ -222,3 +222,12 @@
     color: yellow; /* highlight color */
     transition: color 0.5s ease-in-out; /* ease-in-out transition */
 }
+
+.BlogPage .BlogPage_Container table td:first-child {
+    vertical-align: top;
+}
+
+.BlogPage .BlogPage_Container table {
+    border-collapse: separate;
+    border-spacing: 0rem var(--text-margin);
+}
