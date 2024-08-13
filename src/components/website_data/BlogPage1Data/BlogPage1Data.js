@@ -96,16 +96,6 @@ const BlogPage1Data = [
                 ]
             },
             {
-                type: 'ul', data: [
-                    { type: 'li', data: [{ type: 'strong', data: 'Get or create some data. ' }, { type: 'Text', data: 'Image files for each class must be provided in a separate sub folder. The folder names are used as class labels' }] },
-                    { type: 'li', data: [{ type: 'strong', data: 'Preprocess images' }, { type: 'Text', data: ' by calling ' }, { type: 'span', className: 'code', data: 'Dataset.from_folder' },] },
-                    { type: 'li', data: [{ type: 'strong', data: 'Set hyper-parameters' }, { type: 'Text', data: ' with ' }, { type: 'span', className: 'code', data: 'HParams' }, { type: 'Text', data: ' and ' }, { type: 'span', className: 'code', data: 'ModelOptions' }] },
-                    { type: 'li', data: [{ type: 'strong', data: 'Fine tune the model' }, { type: 'Text', data: ' with ' }, { type: 'span', className: 'code', data: 'GestureRecognizer.create' },] },
-                    { type: 'li', data: [{ type: 'strong', data: 'Evaluate performance' }, { type: 'Text', data: ' with ' }, { type: 'span', className: 'code', data: 'model.evaluate' },] },
-                    { type: 'li', data: [{ type: 'strong', data: 'Export the model' }, { type: 'Text', data: ' with ' }, { type: 'span', className: 'code', data: 'model.export_model' },] },
-                ]
-            },
-            {
                 type: 'table', className: 'body', data: [
                     [{ type: 'td', data: [{ type: 'bullet_points', data: `•` }] },
                     { type: 'td', data: [{ type: 'strong', data: 'Get or create some data. ' }, { type: 'Text', data: 'Image files for each class must be provided in a separate sub folder. The folder names are used as class labels' }] }],
