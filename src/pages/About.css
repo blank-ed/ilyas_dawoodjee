@@ -67,7 +67,7 @@
 }
 
 .About .About_Container .About_Avatar img {
-    width: var(--about-user-image-size);
+    width: auto;
     height: var(--about-user-image-size);
     border-radius: var(--user-image-border-radius);
     margin-bottom: var(--image-margin);

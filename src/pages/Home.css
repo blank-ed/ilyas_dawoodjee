@@ -41,7 +41,7 @@
 }
 
 .Home .Home_Container .Home_Profile .Home_Avatar img {
-    width: var(--home-user-image-size);
+    width: auto;
     height: var(--home-user-image-size);
     margin-bottom: var(--image-margin);
 }
