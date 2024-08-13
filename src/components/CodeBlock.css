@@ -78,6 +78,20 @@
     color: #ffa17a;
 }
 
+.codeTable {
+    border-collapse: separate;
+    border-spacing: 2px 2px !important;
+}
+
+/* .BlogPage .BlogPage_Container table td:first-child {
+    vertical-align: top;
+}
+
+.BlogPage .BlogPage_Container table {
+    border-collapse: separate;
+    border-spacing: 0rem var(--text-margin);
+} */
+
 .a {
     color: orange;
 }

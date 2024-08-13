@@ -33,7 +33,7 @@ function CodeBlock({ title, extraText }) {
                 <FontAwesomeIcon className="copyIcon" icon={isOpen ? faCopy : faEllipsis} onClick={copyCodeToClipboard} />
             </div>
             <div className={`collapsableContentCode ${isOpen ? 'open' : ''} ${!isContentVisible ? 'hidden' : ''}`}>
-                <table>
+                <table className='codeTable'>
                     <tbody>
                         {extraText.map((text, index) => (
                             <tr key={index}>
