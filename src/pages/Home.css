@@ -19,7 +19,7 @@
 
 @media (max-width: 1000px) {
     :root {
-        --home-content-width: 90%;
+        --home-content-width: 95%;
     }
 }
 
@@ -140,7 +140,7 @@
     cursor: pointer;
     float: left;
     margin-right: var(--image-margin);
-    margin-bottom: var(--image-margin);
+    margin-bottom: calc(var(--image-margin) / 3);
     width: 40%;
     height: auto;
 }
