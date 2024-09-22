@@ -46,6 +46,11 @@
     margin-bottom: var(--image-margin);
 }
 
+.Home .Home_Disclaimer {
+    display: flex;
+    flex-direction: column;
+}
+
 .Home .Home_Container .Home_Profile .Home_Subtitle p,
 .Home .Home_Container .Home_Profile .Home_Disclaimer p {
     font-size: var(--subtitle-font-size);

@@ -1,9 +1,9 @@
 const PublicationData = [
     {
-        publicationTitle: 'Talami, R., Hu, X., Dawoodjee, I. and Ghahramani, A. (2023) “Towards Occupant-centric Positioning of Indoor Environmental Quality Sensing Devices”, Building and Environment [ Under Review - 2024 ]',
+        publicationTitle: 'Dawoodjee, I. and Ghahramani, A. (2024) “A Flexible Framework for Optimal Design and Validation of rPPG Methods”, IEEE Journal of Biomedical and Health Informatics [ Submitted - 2024 ]',
     },
     {
-        publicationTitle: 'Dawoodjee, I. and Ghahramani, A. (2024) “A Flexible Framework for Optimal Design and Validation of rPPG Methods”, Scientific Reports [ Submitted - 2024 ]',
+        publicationTitle: 'Talami, R., Hu, X., Dawoodjee, I. and Ghahramani, A. (2023) “Examining Different Placement Strategies for Indoor Environmental Quality Sensors in Office Environments”, Science and Technology for the Built Environment [ Submitted - 2024 ]',
     },
     {
         publicationTitle: 'Talami, R., Dawoodjee, I. and Ghahramani, A. (2024) “Demystifying energy savings from dynamic temperature setpoints under weather and occupancy variability”, Energy and Built Environment, 5(6), pp.878-888',
