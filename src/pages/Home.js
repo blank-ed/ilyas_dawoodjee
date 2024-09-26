@@ -98,7 +98,7 @@ function Home() {
             <p>Ilyas Dawoodjee - Personal Portfolio Homepage</p>
             <p>Website currently under construction!</p>
             <p>All the blog posts below are filler data used to design the blog pages (This includes the Projects page).</p>
-            <p>Publishing a blog soon! Title: "Training custom PointNet++ classification model using Machining Feature Dataset"</p>
+            <p>Publishing a blog soon! Title: "Training custom PointNet++ classification model using Machining 2Feature Dataset"</p>
           </div>
         </div>
         {currentPosts.map((data, index) => (
