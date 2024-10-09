@@ -2,8 +2,7 @@ import React from 'react'
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faFolderOpen, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faTag } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 function Footer({ ishomePage }) {
   return (
