@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faFolderOpen } from '@fortawesome/free-regular-svg-icons';
-import { faArrowRight, faArrowLeft, faTag, faCalendar, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -109,12 +109,12 @@ function Home() {
             <div className="article_subtitle">
               <span className='article_text'><FontAwesomeIcon className='article_icons' icon={faCalendar} />&nbsp;&nbsp;{data.published_date}</span>
               <span>|</span>
-              <span className='article_text'><a className='article_icon_link' onClick={() => handleFolderClick(data.folder_name)}><FontAwesomeIcon className='article_icons' icon={faFolderOpen} />&nbsp;&nbsp;{data.folder_name}</a></span>
+              <span className='article_text'><button className='article_icon_link' onClick={() => handleFolderClick(data.folder_name)}><FontAwesomeIcon className='article_icons' icon={faFolderOpen} />&nbsp;&nbsp;{data.folder_name}</button></span>
               <span>|</span>
               {data.article_tags.map((tag, index) => (
-                <a className='article_tags' key={index} onClick={() => handleTagClick(tag.tag_name)}>
+                <button className='article_tags' key={index} onClick={() => handleTagClick(tag.tag_name)}>
                   {tag.tag_name.toUpperCase()}
-                </a>
+                </button>
               ))}
             </div>
             <div className="article_data">

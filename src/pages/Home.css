@@ -83,6 +83,11 @@
     border-radius: var(--article-border-radius);
 }
 
+.Home .Home_Container .article button {
+    background-color: inherit;
+    border: none;
+}
+
 .Home .Home_Container .article .article_title h1 {
     font-weight: bold;
     font-size: var(--title-font-size);
