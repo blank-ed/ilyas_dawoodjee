@@ -6,8 +6,7 @@ import Image5 from './Image5.png'
 import Image6 from './Image6.png'
 import Image7 from './Image7.png'
 import Image8 from './Image8.png'
-import TestImage from '../test.jpg'
-import { faBars, faCalendarDays, faChevronLeft, faChevronRight, faClock, faFolderOpen, faPen, faSection, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCalendarDays, faChevronRight, faClock, faFolderOpen, faPen, faSection, faTag } from '@fortawesome/free-solid-svg-icons';
 import BlogData from '../BlogData';
 
 const BlogIndex = 0;

@@ -1,5 +1,5 @@
 import TestImage from '../test.jpg'
-import { faBars, faCalendarDays, faChevronLeft, faChevronRight, faClock, faFolderOpen, faPen, faSection, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCalendarDays, faChevronLeft, faClock, faFolderOpen, faPen, faSection, faTag } from '@fortawesome/free-solid-svg-icons';
 import BlogData from '../BlogData';
 
 const BlogIndex = 4;

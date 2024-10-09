@@ -20,7 +20,7 @@ function About() {
       <NavBar selected="about"></NavBar>
       <div className="About_Container">
         <div className="About_Avatar">
-          <img src={MyImage} alt="Ilyas's Headshot Picture" />
+          <img src={MyImage} alt="Ilyas's Headshot" />
           <p className='shade'>Ilyas Dawoodjee, Engineer</p>
         </div>
         <div className='About_Paragraph'>
