@@ -7,7 +7,7 @@
 
     --article-padding: clamp(1rem, 2vw, 2rem); /* Padding for the main article */
 
-    --article-border-radius: 1rem; /* Border radius of each article */
+    --article-border-radius: 0.5rem; /* Border radius of each article */
     --article-subtitle-gap: clamp(0.2rem, 1vw, 0.5rem); /* Gap between each article subtitle */
 }
 
