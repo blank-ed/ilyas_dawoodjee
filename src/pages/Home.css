@@ -9,6 +9,8 @@
 
     --article-border-radius: 0.5rem; /* Border radius of each article */
     --article-subtitle-gap: clamp(0.2rem, 1vw, 0.5rem); /* Gap between each article subtitle */
+
+    --homepage-blog-float: left;
 }
 
 @media (max-width: 1400px) {
@@ -20,6 +22,12 @@
 @media (max-width: 1000px) {
     :root {
         --home-content-width: 95%;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --homepage-blog-float: none;
     }
 }
 
@@ -148,7 +156,7 @@
 
 .Home .Home_Container .article .article_image {
     cursor: pointer;
-    float: left;
+    float: var(--homepage-blog-float);
     margin-right: var(--image-margin);
     margin-bottom: calc(var(--image-margin) / 3);
     width: 40%;
