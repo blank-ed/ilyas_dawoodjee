@@ -23,21 +23,25 @@
 
     --code-padding-top-bottom: 0.3rem;
     --code-padding-left-right: 0.4rem;
+
+    --top-pixels-reset-button: -74px;
 }
 
 @media (max-width: 1000px) {
     :root {
         --code-font-size: 0.6rem !important;
         --ul-text-indent-and-padding-left: 16px;
+        --top-pixels-reset-button: -66px;
     }
 }
 
 @media (max-width: 700px) {
     :root {
-        --code-font-size: 0.4rem !important;  
+        --code-font-size: 0.4rem !important;
         --code-padding-top-bottom: 0.15rem;
-        --code-padding-left-right: 0.2rem; 
+        --code-padding-left-right: 0.2rem;
         --ul-text-indent-and-padding-left: 12px;
+        --top-pixels-reset-button: -63px;
     }
 }
 
@@ -172,7 +176,7 @@
     margin: var(--subtext-margin) 0rem;
 }
 
-.BlogPage .BlogPage_Container .blog_tags > * {
+.BlogPage .BlogPage_Container .blog_tags>* {
     display: inline;
     vertical-align: middle;
 }
@@ -219,8 +223,8 @@
 }
 
 .BlogPage .highlight {
-    color: yellow; /* highlight color */
-    transition: color 0.5s ease-in-out; /* ease-in-out transition */
+    color: yellow;
+    transition: color 0.5s ease-in-out;
 }
 
 .BlogPage .BlogPage_Container table td:first-child {
@@ -231,3 +235,99 @@
     border-collapse: separate;
     border-spacing: 0rem var(--text-margin);
 } */
+
+/* Custom code for Blog Page 1 CAD Model */
+.BlogPage .BlogPage1Data_CADModel {
+    display: flex;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4), 0px 6px 8px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    border-radius: 5px;
+    border: 1px solid var(--about-section-border-color);
+    overflow: hidden;
+    background-color: var(--about-section-background-color);
+}
+
+.BlogPage .CADModelDisplay {
+    width: 70%;
+}
+
+.BlogPage .CADModel {
+    height: 100%;
+}
+
+.BlogPage .PointCloudSlider {
+    position: relative;
+    top: -95px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.BlogPage .PointCloudSlider label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--text-font-size);
+}
+
+.BlogPage .CADModelSelector {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 0.2rem;
+    padding: 0.5rem 0.2rem;
+}
+
+.BlogPage .CADModelSelector>*,
+.BlogPage .CADModelType>* {
+    color: var(--background-color);
+    font-size: var(--text-font-size);
+    padding: 0.2rem 0rem;
+    cursor: pointer;
+    border: none;
+}
+
+.BlogPage .CADModelSelector>*:hover,
+.BlogPage .CADModelType>*:hover {
+    background-color: var(--lighter-hover-color);
+    color: white;
+}
+
+.BlogPage .CADModelType {
+    display: flex;
+    width: 100%;
+    gap: 0.2rem;
+    padding: 0.5rem 0.2rem;
+}
+
+.CADModelType button {
+    flex: 1;
+    cursor: pointer;
+    border: none;
+}
+
+.CADModelSelector button.selected,
+.CADModelType button.selected {
+    background-color: var(--hover-color);
+    color: white !important;
+    border: none;
+    font-weight: normal;
+}
+
+.reset-button {
+    position: relative;
+    top: var(--top-pixels-reset-button);
+    border-bottom-left-radius: 5px;
+    border: none;
+    padding: 10px 35px;
+    width: 100%;
+    color: var(--background-color);
+    font-size: var(--text-font-size);
+}
+
+.reset-button:hover {
+    background-color: var(--hover-color);
+    color: white;
+    cursor: pointer;
+}

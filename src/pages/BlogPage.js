@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './BlogPage.css';
 import BlogPage1Data from '../components/website_data/BlogPage1Data/BlogPage1Data';
-import BlogPage2Data from '../components/website_data/BlogPage2Data/BlogPage2Data';
-import BlogPage3Data from '../components/website_data/BlogPage3Data/BlogPage3Data';
-import BlogPage4Data from '../components/website_data/BlogPage4Data/BlogPage4Data';
-import BlogPage5Data from '../components/website_data/BlogPage5Data/BlogPage5Data';
+// import BlogPage2Data from '../components/website_data/BlogPage2Data/BlogPage2Data';
+// import BlogPage3Data from '../components/website_data/BlogPage3Data/BlogPage3Data';
+// import BlogPage4Data from '../components/website_data/BlogPage4Data/BlogPage4Data';
+// import BlogPage5Data from '../components/website_data/BlogPage5Data/BlogPage5Data';
 import BlogData from '../components/website_data/BlogData';
 
 import NavBar from '../components/NavBar';
@@ -17,7 +17,8 @@ import Collapsable from '../components/Collapsable';
 import CodeBlock from '../components/CodeBlock';
 import TableofContent from '../components/TableofContent';
 
-const blogPages = [BlogPage1Data, BlogPage2Data, BlogPage3Data, BlogPage4Data, BlogPage5Data];
+// const blogPages = [BlogPage1Data, BlogPage2Data, BlogPage3Data, BlogPage4Data, BlogPage5Data];
+const blogPages = [BlogPage1Data];
 
 const blogDataMapping = BlogData.reduce((acc, article, index) => {
   const words = article.article_title.split(' ');
@@ -48,7 +49,7 @@ function BlogPage() {
     const sanitizedTagName = tagName.replace(/,/g, '');
     navigate(`/projects?tag=${sanitizedTagName}`);
   };
-  
+
 
   function renderData(element, index, parentIndex = '') {
     const uniqueKey = `${parentIndex}-${index}`;
@@ -126,8 +127,6 @@ function BlogPage() {
             {element.data}
           </a>
         );
-
-
       case 'sup':
         return (
           <sup id={element.id} key={`${element.id}-${uniqueKey}`}>{element.data}</sup>
@@ -169,6 +168,12 @@ function BlogPage() {
       case 'bullet_points':
         return (
           <>{element.data}&nbsp;&nbsp;&nbsp;</>
+        );
+      case 'unique_code':
+        return (
+          <div className={element.className}>
+            {element.data}
+          </div>
         )
       default:
         return null;
