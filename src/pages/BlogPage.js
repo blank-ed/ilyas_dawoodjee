@@ -2,14 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import './BlogPage.css';
-import BlogPage1Data from '../components/website_data/BlogPage1Data/BlogPage1Data';
-// import BlogPage2Data from '../components/website_data/BlogPage2Data/BlogPage2Data';
-// import BlogPage3Data from '../components/website_data/BlogPage3Data/BlogPage3Data';
-// import BlogPage4Data from '../components/website_data/BlogPage4Data/BlogPage4Data';
-// import BlogPage5Data from '../components/website_data/BlogPage5Data/BlogPage5Data';
-import BlogData from '../components/website_data/BlogData';
+
+import BlogPage1Data from '../website_data/BlogPage1Data/BlogPage1Data';
+import BlogData from '../website_data/BlogData';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -101,21 +97,11 @@ function BlogPage() {
         );
       case 'a':
         return element.className === 'folder blog_links' ? (
-          <a
-            className={element.className}
-            key={`${element.className}-${uniqueKey}`}
-            onClick={(event) => handleFolderClick(element.data, event)}
-            href="#"
-          >
+          <a className={element.className} key={`${element.className}-${uniqueKey}`} onClick={(event) => handleFolderClick(element.data, event)} href="#">
             {element.data}
           </a>
         ) : element.className === 'tag blog_links_inverse' ? (
-          <a
-            className={element.className}
-            key={`${element.className}-${uniqueKey}`}
-            onClick={(event) => handleTagClick(element.data, event)}
-            href='#'
-          >
+          <a className={element.className} key={`${element.className}-${uniqueKey}`} onClick={(event) => handleTagClick(element.data, event)} href='#'>
             {element.data}
           </a>
         ) : (

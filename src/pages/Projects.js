@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Projects.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import BlogData from '../components/website_data/BlogData';
+import BlogData from '../website_data/BlogData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleDot, faFolder, faClock } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from 'react-router-dom';

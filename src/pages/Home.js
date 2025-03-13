@@ -9,8 +9,8 @@ import { faArrowRight, faArrowLeft, faCalendar } from '@fortawesome/free-solid-s
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import MyImage from '../components/website_data/me.jpg';
-import BlogData from '../components/website_data/BlogData';
+import MyImage from '../website_data/me.jpg';
+import BlogData from '../website_data/BlogData';
 
 function Home() {
   const postsPerPage = 3;

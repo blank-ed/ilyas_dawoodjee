@@ -3,15 +3,15 @@ import './About.css';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import MyImage from '../components/website_data/me.jpg'
+import MyImage from '../website_data/me.jpg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
-import WorkExperienceData from '../components/website_data/WorkExperienceData';
-import EducationData from '../components/website_data/EducationData';
-import PublicationData from '../components/website_data/PublicationData';
+import WorkExperienceData from '../website_data/WorkExperienceData';
+import EducationData from '../website_data/EducationData';
+import PublicationData from '../website_data/PublicationData';
 
 
 function About() {
