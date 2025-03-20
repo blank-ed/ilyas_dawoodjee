@@ -1,37 +1,51 @@
-import BlogPage1Image from './BlogPage1Data/placeholderimage.jpg'
+import PlaceHolderImage from './placeholderimage.jpg'
+import Figure1 from './BlogPage1Data/images/Figure1.png'
 
 const BlogData = [
     {
-        image: BlogPage1Image,
-        article_title: "Training custom PointNet++ classification model using machining feature dataset",
-        published_date: "31 January 2025",
-        published_folder: "/projects",  // Maybe delete this later (check if its being used)
+        image: Figure1,
+        article_title: "Understanding PointNet++: A Intuitive & Visual Guide",
+        published_date: "01 April 2025",
         folder_name: "Artificial Intelligence",
-        article_abstract: "xxxx...",
+        article_abstract: "I recently came across a paper, PointNet++ [1] , that trains a deep learning model from Point Cloud Data (PCD) to classify and segment 3D geometric data. The model bypasses the need to preprocess the data into image grids or 3D voxels, which can result in a loss of detail and added complexity. As someone new to this field, I found this paper challenging. Aside from the paper and a few vague blog posts, there wasn’t many resources to learn from. Either way, the explanations in various sections were either filled with unnecessarily complex language or simply reiterated content from the original paper, which did not help much. This has led me document my understanding of this paper in terms of a blog post, where I will try to provide examples with visuals for a better understanding. This blog is about providing readers, from beginners to experts, an intuitive and visual way of understanding PointNet++ by comparing different algorithms and explaining the rationale behind selecting specific approaches.",
         article_link: "/",
         article_tags: [
-            { tag_name: "Deep Learning", tag_link: '/projects' },  // Maybe delete tag_link later (check if its being used anywhere)
-            { tag_name: "Point Clouds", tag_link: '/projects' },
-            { tag_name: "Computer Vision", tag_link: '/projects' },
-            { tag_name: "3D Data Processing", tag_link: '/projects' },
+            { tag_name: "Deep Learning" },
+            { tag_name: "Point Clouds" },
+            { tag_name: "Computer Vision" },
+            { tag_name: "3D Data Processing" },
         ],
     },
     {
-        image: BlogPage1Image,
-        article_title: "Customizing a gesture recognition model with MediaPipe",
-        published_date: "07 April 2024",
-        published_folder: "/projects",
+        image: PlaceHolderImage,
+        article_title: "Training custom PointNet++ Classification Model Using Machining Feature Dataset",
+        published_date: "xx xxxx 2025",
         folder_name: "Artificial Intelligence",
-        article_abstract: "MediaPipe is an amazing library of ready-to-use deep learning models for common tasks in various domains. My previous post highlights how you can use it to easily detect facial landmarks. There are many other solutions available to explore. In this post however, I want to take a look at another feature, the MediaPipe Model Maker. Model maker allows you to extend the functionality of some MediaPipe solutions by customizing models to your specific use case. With only a few lines of code, you can fine tune models and rewire the internals to accommodate new targets.",
+        article_abstract: "...",
         article_link: "/",
         article_tags: [
-            { tag_name: "Computer Vision", tag_link: '/projects' },
-            { tag_name: "Deep Learning", tag_link: '/projects' },
-            { tag_name: "Gesture Recognition", tag_link: '/projects' },
-            { tag_name: "Python", tag_link: '/projects' },
-            { tag_name: "Transfer Learning", tag_link: '/projects' }
+            { tag_name: "Deep Learning" },
+            { tag_name: "Point Clouds" },
+            { tag_name: "Computer Vision" },
+            { tag_name: "3D Data Processing" },
         ],
     },
+    // {
+    //     image: BlogPage1Image,
+    //     article_title: "Customizing a gesture recognition model with MediaPipe",
+    //     published_date: "07 April 2024",
+    //     published_folder: "/projects",
+    //     folder_name: "Artificial Intelligence",
+    //     article_abstract: "MediaPipe is an amazing library of ready-to-use deep learning models for common tasks in various domains. My previous post highlights how you can use it to easily detect facial landmarks. There are many other solutions available to explore. In this post however, I want to take a look at another feature, the MediaPipe Model Maker. Model maker allows you to extend the functionality of some MediaPipe solutions by customizing models to your specific use case. With only a few lines of code, you can fine tune models and rewire the internals to accommodate new targets.",
+    //     article_link: "/",
+    //     article_tags: [
+    //         { tag_name: "Computer Vision", tag_link: '/projects' },
+    //         { tag_name: "Deep Learning", tag_link: '/projects' },
+    //         { tag_name: "Gesture Recognition", tag_link: '/projects' },
+    //         { tag_name: "Python", tag_link: '/projects' },
+    //         { tag_name: "Transfer Learning", tag_link: '/projects' }
+    //     ],
+    // },
     // {
     //     image: TestImage,
     //     article_title: "Facial landmark detection 2 is still easy with MediaPipe (2023 update)",

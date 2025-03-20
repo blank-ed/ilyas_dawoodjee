@@ -6,24 +6,29 @@ import { Link, useLocation } from 'react-router-dom';
 
 function TableofContent({ contentText }) {
     const [isOpen, setIsOpen] = useState(true);
-    const [initialLoad, setInitialLoad] = useState(true);
 
     const toggleCollapse = () => setIsOpen(!isOpen);
 
     const location = useLocation();
 
     useEffect(() => {
-        if (!initialLoad && location.hash) {
-            const id = location.hash.replace("#", "");
-            const element = document.getElementById(id);
-            if (element) {
-                const yOffset = -70;
-                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
+        if (location.hash) {
+            // If the target is inside a collapsible section, ensure it is open.
+            if (!isOpen) {
+                setIsOpen(true);
             }
+            // Delay the scroll to let the DOM update
+            setTimeout(() => {
+                const id = location.hash.replace("#", "");
+                const element = document.getElementById(id);
+                if (element) {
+                    const yOffset = -70;
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }, 150); // Adjust delay as needed
         }
-        setInitialLoad(false);
-    }, [location]);
+    }, [location, isOpen]);
 
     return (
         <div className={`tableofcontentContainer`}>

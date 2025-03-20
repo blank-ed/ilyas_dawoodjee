@@ -62,10 +62,10 @@ function blogpage_subtitle_content({ BlogIndex, BlogPageData }) {
 function blogpage_title_content({ BlogIndex, tocItems }) {
     const ordinal = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'];
     let toc = [];
+    let tocTitles = [];
     let sectionLinks = [];
 
     // Always start with Summary
-    sectionLinks.push('summary');
     toc.push({ title: 'Summary', type: 'Title', section_link: '#summary' });
 
     // Loop over each section in tocItems and create TOC entries
@@ -73,20 +73,20 @@ function blogpage_title_content({ BlogIndex, tocItems }) {
         // The first element is the main section title
         const mainLink = ordinal[sectionIndex];
         sectionLinks.push(mainLink);
+        tocTitles.push(section[0]);
         toc.push({ title: section[0], type: 'Title', section_link: '#' + mainLink });
 
         // Subsequent elements are treated as subtitles
         for (let j = 1; j < section.length; j++) {
             const subLink = mainLink + '_' + ordinal[j - 1];
             sectionLinks.push(subLink);
+            tocTitles.push(section[j]);
             toc.push({ title: section[j], type: 'SubTitle', section_link: '#' + subLink });
         }
     });
 
     // Append Conclusion and References
-    sectionLinks.push('conclusion');
     toc.push({ title: 'Conclusion', type: 'Title', section_link: '#conclusion' });
-    sectionLinks.push('references');
     toc.push({ title: 'References', type: 'Title', section_link: '#references' });
 
     let title_content = {
@@ -110,11 +110,32 @@ function blogpage_title_content({ BlogIndex, tocItems }) {
             // Blog page Table of Content using the generated toc
             { type: 'TableofContent', contentText: toc }
         ],
-        sectionLinks: sectionLinks
+        sectionLinks: sectionLinks,
+        tocTitles: tocTitles
     };
 
     return title_content;
 }
 
+function blogpage_references_content({ ReferencesItems }) {
+    return {
+        type: 'table',
+        className: 'reference_section_table',
+        data: ReferencesItems.map((refItem, idx) => [
+            {
+                type: 'td', className: 'body reference', id: `ref_${idx + 1}`, data: [
+                    // Main citation text with the reference number prepended
+                    { type: 'Text', data: `${idx + 1}. ${refItem.citationText} ` },
+                    // A link element for the reference (e.g., a DOI, arXiv link, etc.)
+                    { type: 'a', href: refItem.href || "", className: "blog_links", data: "[Link]" },
+                    // // A link that points back to the in-text reference
+                    // { type: 'Link', to: `#intext_ref_${idx + 1}`, className: "blog_links", data: "  ↩" }
+                ]
+            }
+        ])
+    };
+}
 
-export { footer_content, blogpage_subtitle_content, blogpage_title_content };
+
+
+export { footer_content, blogpage_subtitle_content, blogpage_title_content, blogpage_references_content };

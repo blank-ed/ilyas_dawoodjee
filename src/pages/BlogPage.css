@@ -82,6 +82,11 @@
     font-size: var(--subtext-font-size);
 }
 
+.BlogPage .BlogPage_Container .center {
+    display: block;
+    text-align: center;
+}
+
 .BlogPage .BlogPage_Container .sectionIcon svg path {
     color: var(--hover-color);
 }
@@ -92,7 +97,7 @@
 }
 
 .BlogPage .BlogPage_Container .section_title {
-    display: inline-block;
+    display: block;
     font-weight: bold;
     font-size: var(--title-font-size);
     margin: calc(var(--title-margin) * var(--title-multiplier)) 0rem var(--title-margin) 0rem;
@@ -100,6 +105,10 @@
 
 .BlogPage .BlogPage_Container strong {
     font-weight: bold;
+}
+
+.BlogPage .BlogPage_Container em {
+    font-style: italic;
 }
 
 .BlogPage .BlogPage_Container .code {
@@ -115,7 +124,7 @@
     font-size: var(--subtitle-font-size);
     font-weight: bold;
     margin: calc(var(--subtitle-margin) * var(--subtitle-multiplier)) 0rem var(--subtitle-margin) 0rem;
-    display: inline-block;
+    display: block;
 }
 
 /* Formatting for the rest of the page */
@@ -130,7 +139,7 @@
 .BlogPage .BlogPage_Container .mainTitle {
     font-size: var(--mainTitle-font-size);
     font-weight: bold;
-    display: inline-block;
+    display: block;
     margin-bottom: var(--mainTitle-margin);
 }
 
@@ -142,14 +151,19 @@
 
 .BlogPage .BlogPage_Container .Blog_Image {
     display: inline-block;
-    margin: var(--image-margin) auto;
+    margin: var(--image-margin) auto calc(var(--image-margin) / 2) auto;
     display: block;
+}
+
+.BlogPage .BlogPage_Container .Blog_Image_FigName {
+    display: block;
+    text-align: center;
 }
 
 .BlogPage .BlogPage_Container ul {
     list-style: inside;
     text-indent: calc(-1 * var(--ul-text-indent-and-padding-left));
-    padding-left: var(--ul-text-indent-and-padding-left);
+    padding-left: calc(2 * var(--ul-text-indent-and-padding-left));
     display: block;
     font-size: var(--text-font-size);
     line-height: var(--line-height);

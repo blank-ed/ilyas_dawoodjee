@@ -2,9 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { InlineMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
+
 import './BlogPage.css';
 
 import BlogPage1Data from '../website_data/BlogPage1Data/BlogPage1Data';
+import BlogPage2Data from '../website_data/BlogPage2Data/BlogPage2Data';
 import BlogData from '../website_data/BlogData';
 
 import NavBar from '../components/NavBar';
@@ -14,7 +18,7 @@ import CodeBlock from '../components/CodeBlock';
 import TableofContent from '../components/TableofContent';
 
 // const blogPages = [BlogPage1Data, BlogPage2Data, BlogPage3Data, BlogPage4Data, BlogPage5Data];
-const blogPages = [BlogPage1Data];
+const blogPages = [BlogPage1Data, BlogPage2Data];
 
 const blogDataMapping = BlogData.reduce((acc, article, index) => {
   const words = article.article_title.split(' ');
@@ -32,8 +36,23 @@ function BlogPage() {
   const blogData = blogDataMapping[blogId];
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
+    setTimeout(() => {
+      if (location.hash) {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          // If the element is a figure, scroll so its bottom is visible; otherwise, align to the top.
+          const isFigure = element.classList && Array.from(element.classList).some(className => className.endsWith('_FigName'));
+          element.scrollIntoView({ behavior: 'smooth', block: isFigure ? 'end' : 'start' });
+        }
+      } else {
+        // Scroll to the top of the page container
+        pageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Then adjust upward by 60 pixels to account for your header offset.
+        window.scrollBy({ behavior: 'smooth' });
+      }
+    }, 100);
+  }, [location.pathname, location.hash]);
+
 
   const handleFolderClick = (folderName, event) => {
     event.preventDefault();
@@ -57,9 +76,14 @@ function BlogPage() {
             {element.data.map((child, childIndex) => renderData(child, childIndex, uniqueKey))}
           </div>
         );
+      case 'Equation':
+        return <InlineMath math={element.data} key={`equation-${uniqueKey}`} />;
       case 'img':
         return (
-          <img src={element.data} className={element.className} key={`${element.className}-${uniqueKey}`} alt="" />
+          <div>
+            <img src={element.data[0]} className={element.className} key={`${element.className}-${uniqueKey}`} alt="" style={element.data[2] ? { width: element.data[2].width, height: element.data[2].height } : {}} />
+            <span id={element.id} className={`body ${element.className}_FigName`} key={`${element.type}-${uniqueKey}`}>{element.data[1]} {element.data[3] && renderData(element.data[3], `${uniqueKey}-extra`)}</span>
+          </div>
         );
       case 'Collapsable':
         return (
@@ -82,8 +106,9 @@ function BlogPage() {
           </span>
         );
       case 'Link':
+        const isExternal = element.to.startsWith('https');
         return (
-          <Link to={element.to} className={element.className} key={`${element.className}-${uniqueKey}`}>
+          <Link to={element.to} className={element.className} key={`${element.className}-${uniqueKey}`} id={element.id} {...(isExternal ? { target: '_blank' } : {})}>
             {element.position === 'left' && element.icon && <FontAwesomeIcon icon={element.icon} />}
             {element.position === 'left' && element.icon && <>&nbsp;&nbsp;</>}
             {Array.isArray(element.data) ? element.data.map((child, childIndex) => renderData(child, childIndex, uniqueKey)) : element.data}
@@ -95,6 +120,10 @@ function BlogPage() {
         return (
           <React.Fragment key={`${element.type}-${uniqueKey}`}>{element.data}</React.Fragment>
         );
+      case 'Space':
+        return (
+          <br />
+        )
       case 'a':
         return element.className === 'folder blog_links' ? (
           <a className={element.className} key={`${element.className}-${uniqueKey}`} onClick={(event) => handleFolderClick(element.data, event)} href="#">
@@ -105,11 +134,7 @@ function BlogPage() {
             {element.data}
           </a>
         ) : (
-          <a
-            href={element.href}
-            className={element.className}
-            key={`${element.className}-${uniqueKey}`}
-          >
+          <a href={element.href} className={element.className} key={`${element.className}-${uniqueKey}`} target='_blank'>
             {element.data}
           </a>
         );
@@ -132,6 +157,10 @@ function BlogPage() {
       case 'strong':
         return (
           <strong key={`${element.type}-${uniqueKey}`}>{element.data}</strong>
+        );
+      case 'em':
+        return (
+          <em key={`${element.type}-${uniqueKey}`}>{element.data}</em>
         );
       case 'table':
         return (
