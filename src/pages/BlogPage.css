@@ -6,20 +6,29 @@
 
 :root {
     /*  */
-    --code-font-size: 0.8rem; /* Font size for the code text */
+    --code-font-size: 0.8rem;
+    /* Font size for the code text */
 
     --code-background-color: rgba(44, 71, 114, 0.3);
     --code-color: #ffa17a;
 
-    --ul-text-indent-and-padding-left: 20px; /* This is for the lists */
-    --line-height: 1.5; /* This is for the line height */
-    --reference-line-height: 1.25; /* Line height for the references */
-    --blog-footer-animation: 10px; /* The moving left and right animation for the blog footer next links */
-    --blog-page-subtitle-section-gap: 1rem; /* Gap between the blog page's subtitle (eg. date, no. words, time, folder name) */
+    --ul-text-indent-and-padding-left: 20px;
+    /* This is for the lists */
+    --line-height: 1.5;
+    /* This is for the line height */
+    --reference-line-height: 1.25;
+    /* Line height for the references */
+    --blog-footer-animation: 10px;
+    /* The moving left and right animation for the blog footer next links */
+    --blog-page-subtitle-section-gap: 1rem;
+    /* Gap between the blog page's subtitle (eg. date, no. words, time, folder name) */
 
-    --reference-section-table-padding-top-bottom: clamp(0.5rem, 2vw, 1rem); /* Top and bottom padding for the reference section */
-    --reference-padding-left: clamp(1rem, 2vw, 2rem); /* Left padding for the references */
-    --blog-footer-margin-top: clamp(1rem, 2vw, 2rem); /* Margin top for the blog footer (left link and right link container) */
+    --reference-section-table-padding-top-bottom: clamp(0.5rem, 2vw, 1rem);
+    /* Top and bottom padding for the reference section */
+    --reference-padding-left: clamp(1rem, 2vw, 2rem);
+    /* Left padding for the references */
+    --blog-footer-margin-top: clamp(1rem, 2vw, 2rem);
+    /* Margin top for the blog footer (left link and right link container) */
 
     --code-padding-top-bottom: 0.3rem;
     --code-padding-left-right: 0.4rem;
@@ -97,10 +106,22 @@
 }
 
 .BlogPage .BlogPage_Container .section_title {
-    display: block;
+    display: inline-block;
+    width: 100%;
     font-weight: bold;
     font-size: var(--title-font-size);
+    padding: calc(var(--title-margin) * var(--title-multiplier)) 0rem var(--title-margin) 0rem;
     margin: calc(var(--title-margin) * var(--title-multiplier)) 0rem var(--title-margin) 0rem;
+    position: relative;
+}
+
+.BlogPage .BlogPage_Container .section_title::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 5%;
+    width: 90%;
+    border-top: 4px solid var(--hover-color);
 }
 
 .BlogPage .BlogPage_Container strong {
@@ -124,7 +145,8 @@
     font-size: var(--subtitle-font-size);
     font-weight: bold;
     margin: calc(var(--subtitle-margin) * var(--subtitle-multiplier)) 0rem var(--subtitle-margin) 0rem;
-    display: block;
+    display: inline-block;
+    width: 100%;
 }
 
 /* Formatting for the rest of the page */
@@ -139,7 +161,8 @@
 .BlogPage .BlogPage_Container .mainTitle {
     font-size: var(--mainTitle-font-size);
     font-weight: bold;
-    display: block;
+    display: inline-block;
+    width: 100%;
     margin-bottom: var(--mainTitle-margin);
 }
 
@@ -150,7 +173,7 @@
 }
 
 .BlogPage .BlogPage_Container .Blog_Image {
-    display: inline-block;
+    /* display: inline-block; */
     margin: var(--image-margin) auto calc(var(--image-margin) / 2) auto;
     display: block;
 }

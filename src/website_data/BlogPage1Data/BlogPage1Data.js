@@ -266,12 +266,12 @@ const BlogIndex = 0;
 
 // For Table of Contents
 const tocItems = [
-    ['Revisiting PointNet'],  // First section
-    ['Hierarchical Point Set Feature Learning', 'Sampling Layer', 'Grouping Layer', 'PointNet Layer'],  // Second section
-    ['Robust Feature Learning Under Non-Uniform Sampling Density', 'Multi-Scale Grouping (MSG)', 'Multi-Resolution Grouping (MRG)', 'Single-Scale Grouping (SSG)', 'Random Input Dropout (DP)', 'Network Architectures'],  // Third section
-    ['Performance Evaluation of PointNet++ Variants Under Non-Uniform Sampling'],  // Fourth section
-    ['PCD Visualizers', 'FPS vs Random Sampling Visualizer', 'Ball Query vs kNN Visualizer'],  // Fifth Section
-    ['Future Directions'],  // Sixth Section
+    ['1 Revisiting PointNet'],  // First section
+    ['2 Hierarchical Point Set Feature Learning', '2.1 Sampling Layer', '2.2 Grouping Layer', '2.3 PointNet Layer'],  // Second section
+    ['3 Robust Feature Learning Under Non-Uniform Sampling Density', '3.1 Multi-Scale Grouping (MSG)', '3.2 Multi-Resolution Grouping (MRG)', '3.3 Single-Scale Grouping (SSG)', '3.4 Random Input Dropout (DP)', '3.5 Network Architectures'],  // Third section
+    ['4 Performance Evaluation of PointNet++ Variants Under Non-Uniform Sampling'],  // Fourth section
+    ['5 PCD Visualizers', '5.1 FPS vs Random Sampling Visualizer', '5.2 Ball Query vs kNN Visualizer'],  // Fifth Section
+    ['6 Future Directions'],  // Sixth Section
 ];
 
 const titleContent = blogpage_title_content({ BlogIndex: BlogIndex, tocItems: tocItems });
@@ -951,7 +951,7 @@ const BlogPage1Data = [
             {
                 type: 'span', className: 'body', data: [
                     { type: 'Text', data: 'All the codes used for this blog can be accessed on this ' },
-                    { type: 'Link', to: "", className: 'blog_links', data: "GitHub repository" },
+                    { type: 'Link', to: "https://github.com/blank-ed/Understanding-PointNet-PlusPlus.git", className: 'blog_links', data: "GitHub repository" },
                     { type: 'Text', data: '.' },
                 ]
             },
