@@ -578,7 +578,7 @@ const BlogPage1Data = [
                     { type: 'Text', data: ', using two proposed layer types for grouping and merging features.' },
                 ]
             },
-            { type: 'img', id: 'fig_4', className: 'Blog_Image', data: [Figure4, 'Figure 4: (a) Multi-Scale Grouping; (b) Multi-Resolution Grouping', { width: 'clamp(200px, 2vw, 400px)', height: 'auto' }, { type: 'Link', to: '#ref_1', className: 'blog_links', data: [{ type: 'Text', data: '[1]' }] }] },
+            { type: 'img', id: 'fig_4', className: 'Blog_Image', data: [Figure4, 'Figure 4: (a) Multi-Scale Grouping; (b) Multi-Resolution Grouping', { width: 'clamp(200px, 30vw, 400px)', height: 'auto' }, { type: 'Link', to: '#ref_1', className: 'blog_links', data: [{ type: 'Text', data: '[1]' }] }] },
 
             // Third-First Section
             { type: 'span', className: 'subSection_title sectionIcon', id: sectionLinks.shift(), icon: faBars, data: tocTitles.shift() },
