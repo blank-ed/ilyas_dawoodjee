@@ -17,7 +17,6 @@ import Collapsable from '../components/Collapsable';
 import CodeBlock from '../components/CodeBlock';
 import TableofContent from '../components/TableofContent';
 
-// const blogPages = [BlogPage1Data, BlogPage2Data, BlogPage3Data, BlogPage4Data, BlogPage5Data];
 const blogPages = [BlogPage2Data, BlogPage1Data];
 
 const blogDataMapping = BlogData.reduce((acc, article, index) => {
@@ -43,15 +42,12 @@ function BlogPage() {
       if (location.hash) {
         const element = document.querySelector(location.hash);
         if (element) {
-          // If the element is a figure, scroll so its bottom is visible; otherwise, align to the top.
           const isFigure = element.classList && Array.from(element.classList).some(className => className.endsWith('_FigName'));
           element.scrollIntoView({ behavior: 'smooth', block: isFigure ? 'end' : 'start' });
         }
       } else {
-        // Scroll to the top of the page container
-        pageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Then adjust upward by 60 pixels to account for your header offset.
-        window.scrollBy({ behavior: 'smooth' });
+        // Scroll to the top of the page container smoothly
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       }
     }, 100);
   }, [location.pathname, location.hash]);

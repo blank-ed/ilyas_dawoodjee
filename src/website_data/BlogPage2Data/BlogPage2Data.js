@@ -31,7 +31,7 @@ const ReferencesItems = [
 
 const referencesContent = blogpage_references_content({ ReferencesItems: ReferencesItems });
 
-const BlogPage1Data = [
+const BlogPage2Data = [
     // Title Section
     titleContent,
 
@@ -57,6 +57,6 @@ const BlogPage1Data = [
 ]
 
 // Add subtitle content (published date, word count, reading time, and folder name)
-blogpage_subtitle_content({ BlogIndex: BlogIndex, BlogPageData: BlogPage1Data })
+blogpage_subtitle_content({ BlogIndex: BlogIndex, BlogPageData: BlogPage2Data })
 
-export default BlogPage1Data;
+export default BlogPage2Data;
