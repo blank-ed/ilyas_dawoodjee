@@ -18,7 +18,7 @@ import CodeBlock from '../components/CodeBlock';
 import TableofContent from '../components/TableofContent';
 
 // const blogPages = [BlogPage1Data, BlogPage2Data, BlogPage3Data, BlogPage4Data, BlogPage5Data];
-const blogPages = [BlogPage1Data, BlogPage2Data];
+const blogPages = [BlogPage2Data, BlogPage1Data];
 
 const blogDataMapping = BlogData.reduce((acc, article, index) => {
   const words = article.article_title.split(' ');
