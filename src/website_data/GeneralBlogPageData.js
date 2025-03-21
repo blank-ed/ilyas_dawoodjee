@@ -7,7 +7,7 @@ function footer_content({ BlogIndex, previous_link, next_link }) {
     if (previous_link) {
         footerChildren.push({
             type: 'span', className: 'body footer_left', data: [
-                { type: 'Link', className: 'blog_links_inverse', to: `${BlogData[BlogIndex + 1].article_link}`, icon: faChevronLeft, position: 'left', data: `${BlogData[BlogIndex + 1].article_title}` }
+                { type: 'Link', className: 'blog_links_inverse', to: `${BlogData[BlogIndex - 1].article_link}`, icon: faChevronLeft, position: 'left', data: `${BlogData[BlogIndex - 1].article_title}` }
             ]
         });
     }
@@ -15,7 +15,7 @@ function footer_content({ BlogIndex, previous_link, next_link }) {
     if (next_link) {
         footerChildren.push({
             type: 'span', className: 'body footer_right', data: [
-                { type: 'Link', className: 'blog_links_inverse', to: `${BlogData[BlogIndex - 1].article_link}`, icon: faChevronRight, position: 'right', data: `${BlogData[BlogIndex - 1].article_title}` }
+                { type: 'Link', className: 'blog_links_inverse', to: `${BlogData[BlogIndex + 1].article_link}`, icon: faChevronRight, position: 'right', data: `${BlogData[BlogIndex + 1].article_title}` }
             ]
         });
     }

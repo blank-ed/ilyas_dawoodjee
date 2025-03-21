@@ -13,7 +13,7 @@ import UnderConstruction from '../underconstruction.png'
 // import Figure5 from './images/Figure5.png'
 // import Figure6 from './images/Figure6.png'
 
-const BlogIndex = 1;
+const BlogIndex = 0;
 
 // For Table of Contents
 const tocItems = [
@@ -51,7 +51,7 @@ const BlogPage1Data = [
             referencesContent,
 
             // Footer
-            footer_content({ BlogIndex: BlogIndex, previous_link: false, next_link: false })
+            footer_content({ BlogIndex: BlogIndex, previous_link: false, next_link: true })
         ]
     }
 ]

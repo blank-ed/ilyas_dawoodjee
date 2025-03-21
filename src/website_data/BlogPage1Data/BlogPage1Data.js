@@ -262,7 +262,7 @@ function CADModelSection() {
     );
 }
 
-const BlogIndex = 0;
+const BlogIndex = 1;
 
 // For Table of Contents
 const tocItems = [
@@ -963,7 +963,7 @@ const BlogPage1Data = [
             referencesContent,
 
             // Footer
-            footer_content({ BlogIndex: BlogIndex, previous_link: false, next_link: false })
+            footer_content({ BlogIndex: BlogIndex, previous_link: true, next_link: false })
         ]
     }
 ]
