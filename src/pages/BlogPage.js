@@ -21,11 +21,14 @@ import TableofContent from '../components/TableofContent';
 const blogPages = [BlogPage2Data, BlogPage1Data];
 
 const blogDataMapping = BlogData.reduce((acc, article, index) => {
-  const words = article.article_title.split(' ');
-  const id = `${words[0]}_${words[1]}_${words[2]}${words[3]}`.toLowerCase();
+  const words = article.article_title.split(' ')
+    .map(word => word.replace(/:/g, '')) // remove colons
+    .filter(word => /^[A-Za-z]+$/.test(word)); // filter only words with letters A-Z or a-z
+  const id = words.slice(0, 4).join('_').toLowerCase(); // use first 4 valid words
   acc[id] = blogPages[index];
   return acc;
 }, {});
+
 
 function BlogPage() {
   const { blogId } = useParams();
