@@ -925,7 +925,9 @@ const BlogPage1Data = [
             { type: 'span', className: 'section_title sectionIcon', id: sectionLinks.shift(), icon: faSection, data: tocTitles.shift() },
             {
                 type: 'span', className: 'body', data: [
-                    { type: 'Text', data: 'For the next blog, I want to recreate the figure I mentioned above, where I will train six variants of PointNet++ models for classification: SSG, SSG+DP, MSG, MSG+DP, MRG, and MRG+DP with maximum DP ratio set to 0.95 (as per their ' },
+                    { type: 'Text', data: 'For the ' },
+                    { type: 'Link', to: "https://blank-ed.github.io/ilyas_dawoodjee/#/blogpage/training_custom_classification_model", className: 'blog_links', data: "next blog" },
+                    { type: 'Text', data: ', I want to recreate the figure I mentioned above, where I will train six variants of PointNet++ models for classification: SSG, SSG+DP, MSG, MSG+DP, MRG, and MRG+DP with maximum DP ratio set to 0.95 (as per their ' },
                     { type: 'Link', to: "https://github.com/charlesq34/pointnet2", className: 'blog_links', data: "original code" },
                     { type: 'Text', data: '). They will then be tested on the same testing dataset with the same varying number of points (128, 256, 512, and 1024) so we can see and understand their performance. I will be using a ' },
                     { type: 'Link', to: 'https://github.com/madlabub/Machining-feature-dataset', className: 'blog_links', data: 'machining feature dataset' },
@@ -961,7 +963,7 @@ const BlogPage1Data = [
             referencesContent,
 
             // Footer
-            footer_content({ BlogIndex: BlogIndex, previous_link: false, next_link: true })
+            footer_content({ BlogIndex: BlogIndex, previous_link: true, next_link: false })
         ]
     }
 ]
