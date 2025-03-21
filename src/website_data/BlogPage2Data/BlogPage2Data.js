@@ -51,7 +51,7 @@ const BlogPage1Data = [
             referencesContent,
 
             // Footer
-            footer_content({ BlogIndex: BlogIndex, previous_link: false, next_link: true })
+            footer_content({ BlogIndex: BlogIndex, previous_link: false, next_link: false })
         ]
     }
 ]
