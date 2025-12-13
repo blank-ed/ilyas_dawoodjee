@@ -147,6 +147,12 @@ function BlogPage() {
             {element.data.map((child, childIndex) => renderData(child, childIndex, uniqueKey))}
           </ul>
         );
+      case 'ol':
+        return (
+          <ol key={`${element.type}-${uniqueKey}`}>
+            {element.data.map((child, childIndex) => renderData(child, childIndex, uniqueKey))}
+          </ol>
+        );
       case 'li':
         return (
           <li key={`${element.type}-${uniqueKey}`}>

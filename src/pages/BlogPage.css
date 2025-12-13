@@ -193,6 +193,16 @@
     margin: var(--text-margin) 0rem;
 }
 
+.BlogPage .BlogPage_Container ol {
+    list-style: decimal inside;
+    text-indent: calc(-1 * var(--ul-text-indent-and-padding-left));
+    padding-left: calc(2 * var(--ul-text-indent-and-padding-left));
+    display: block;
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
+    margin: var(--text-margin) 0rem;
+}
+
 .BlogPage .BlogPage_Container li {
     margin-bottom: var(--text-margin);
 }
@@ -282,6 +292,7 @@
     border: 1px solid var(--about-section-border-color);
     overflow: hidden;
     background-color: var(--about-section-background-color);
+    margin-bottom: var(--image-margin);
 }
 
 .BlogPage .CADModelDisplay {
@@ -367,4 +378,130 @@
     background-color: var(--hover-color);
     color: white;
     cursor: pointer;
+}
+
+/* Custom code for Blog Page 2 Robustness Plot */
+.BlogPage .BlogPage2Data_RobustnessPlot {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4), 0px 6px 8px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    border-radius: 5px;
+    border: 1px solid var(--about-section-border-color);
+    overflow: hidden;
+    background-color: var(--about-section-background-color);
+    margin-bottom: var(--image-margin);
+
+    .robustness-container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Custom code for Blog Page 2 tSNE and CM */
+.BlogPage .BlogPage2Data_TSNE,
+.BlogPage .BlogPage2Data_CM {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4), 0px 6px 8px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    border-radius: 5px;
+    border: 1px solid var(--about-section-border-color);
+    overflow: hidden;
+    background-color: var(--about-section-background-color);
+    margin-bottom: var(--image-margin);
+}
+
+.BlogPage .BlogPage2Data_TSNE .tsne-container,
+.BlogPage .BlogPage2Data_CM .cm-container {
+    width: 70%;
+    height: 100%;
+}
+
+.BlogPage .BlogPage2Data_TSNE .TSNE_Selector,
+.BlogPage .BlogPage2Data_CM .CM_Selector {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    color: var(--text-color);
+    border-left: 1px solid var(--about-section-border-color);
+    justify-content: center;
+}
+
+.BlogPage .BlogPage2Data_TSNE .TSNE_Selector .TSNE_ModelSelector,
+.BlogPage .BlogPage2Data_TSNE .TSNE_Selector .TSNE_PointsSelector,
+.BlogPage .BlogPage2Data_CM .CM_Selector .CM_ModelSelector,
+.BlogPage .BlogPage2Data_CM .CM_Selector .CM_PointsSelector {
+    .Text {
+        padding-bottom: 20px;
+    }
+
+    div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: var(--text-font-size);
+        }
+
+        input {
+            margin-right: 8px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .BlogPage .BlogPage2Data_TSNE,
+    .BlogPage .BlogPage2Data_CM {
+        flex-direction: column; /* Stacks items vertically */
+        height: auto; /* Allows container to grow based on content */
+    }
+
+    .BlogPage .BlogPage2Data_TSNE .tsne-container,
+    .BlogPage .BlogPage2Data_CM .cm-container {
+        width: 100%;
+        height: 400px; /* Give the graph a fixed height so it doesn't collapse */
+    }
+
+    .BlogPage .BlogPage2Data_TSNE .TSNE_Selector,
+    .BlogPage .BlogPage2Data_CM .CM_Selector {
+        width: 100%;
+        border-left: none; /* Remove the side divider */
+        border-top: 1px solid var(--about-section-border-color); /* Add a top divider */
+        padding: 20px;
+    }
+
+    /* Optional: Arrange the selector grids to look better on wide mobile screens */
+    .BlogPage .BlogPage2Data_TSNE .TSNE_Selector .TSNE_ModelSelector div,
+    .BlogPage .BlogPage2Data_TSNE .TSNE_Selector .TSNE_PointsSelector div,
+    .BlogPage .BlogPage2Data_CM .CM_Selector .CM_ModelSelector div,
+    .BlogPage .BlogPage2Data_CM .CM_Selector .CM_PointsSelector div {
+        grid-template-columns: repeat(4, 1fr); /* Spreads buttons out horizontally */
+    }
+}
+
+/* For very small screens (mobile phones), revert the grid to 2 columns */
+@media screen and (max-width: 600px) {
+    .BlogPage .BlogPage2Data_TSNE .TSNE_Selector .TSNE_ModelSelector div,
+    .BlogPage .BlogPage2Data_TSNE .TSNE_Selector .TSNE_PointsSelector div,
+    .BlogPage .BlogPage2Data_CM .CM_Selector .CM_ModelSelector div,
+    .BlogPage .BlogPage2Data_CM .CM_Selector .CM_PointsSelector div {
+        /* grid-template-columns: repeat(2, 1fr);  */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Target the SVG class Plotly uses for legends */
+    .BlogPage .BlogPage2Data_TSNE .js-plotly-plot .legend,
+    .BlogPage .BlogPage2Data_CM .js-plotly-plot .legend {
+        display: none !important;
+    }
 }

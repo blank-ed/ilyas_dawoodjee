@@ -45,11 +45,11 @@
 .collapsableContentCode {
     padding: 0;
     max-height: 0;
-    overflow: hidden;
     transition: padding 0.2s ease-in-out, max-height 0.2s ease-in-out, opacity 0.3s ease-in-out;
     background-color: rgba(3, 94, 38, 0.1);
     font-size: var(--code-font-size);
     opacity: 1;
+    overflow-x: auto;
 }
 
 .collapsableContentCode.open {
@@ -76,6 +76,10 @@
 
 .collapsableContentCode .shell {
     color: #ffa17a;
+}
+
+.collapsableContentCode .plaintext {
+    color: #A9B7C6;
 }
 
 .codeTable {
@@ -126,9 +130,17 @@
 }
 
 .i {
-    color: purple;
+    color: #90538A;
 }
 
 .j {
     color: yellow;
+}
+
+.k {
+    color: #B1076C;
+}
+
+.l {
+    color: #8888C6;
 }

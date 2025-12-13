@@ -847,7 +847,7 @@ const BlogPage1Data = [
             {
                 type: 'CodeBlock', title: 'Shell', extraText: [
                     [{ type: 'shell', code: "git clone https://github.com/blank-ed/Understanding-PointNet-PlusPlus.git" }],
-                    [{ type: 'shell', code: "git clone cd Understanding-PointNet-PlusPlus && pip install -r requirements.txt" }],
+                    [{ type: 'shell', code: "cd Understanding-PointNet-PlusPlus && pip install -r requirements.txt" }],
                 ]
             },
             {
