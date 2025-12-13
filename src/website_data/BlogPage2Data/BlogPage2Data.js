@@ -240,7 +240,7 @@ function TSNE() {
                             <label key={model}>
                                 <input 
                                     type="radio" 
-                                    name="model" 
+                                    name="tsne_model" 
                                     value={model} 
                                     checked={selectedModel === model} 
                                     onChange={() => setSelectedModel(model)}
@@ -261,7 +261,7 @@ function TSNE() {
                             <label key={points}>
                                 <input 
                                     type="radio" 
-                                    name="points" 
+                                    name="tsne_points" 
                                     value={points} 
                                     checked={selectedPoints === parseInt(points)} // Ensure type match
                                     onChange={() => setSelectedPoints(parseInt(points))}
@@ -379,7 +379,7 @@ function ConfusionMatrix() {
                             <label key={model}>
                                 <input
                                     type="radio"
-                                    name="model"
+                                    name="cm_model"
                                     value={model}
                                     checked={selectedModel === model}
                                     onChange={() => setSelectedModel(model)}
@@ -399,7 +399,7 @@ function ConfusionMatrix() {
                             <label key={points}>
                                 <input
                                     type="radio"
-                                    name="points"
+                                    name="cm_points"
                                     value={points}
                                     checked={selectedPoints === points}
                                     onChange={() => setSelectedPoints(points)}
