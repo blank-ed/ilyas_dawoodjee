@@ -6,12 +6,19 @@
     --codeText-padding-left: 0.5rem;
 }
 
+@media (max-width: 700px) {
+    :root {
+        --codeNumber-minimum-width: 0.8rem;
+        --codeText-padding-left: 0.25rem;
+    }
+}
+
 .collapsableContainerCode {
     width: 100%;
     margin: var(--collapsableContainer-margin) 0;
     display: inline-block;
     border-left: 0.25rem solid rgba(3, 94, 38);
-    white-space: pre;
+    white-space: normal;
 }
 
 .collapsableTitleCode {
@@ -50,6 +57,8 @@
     font-size: var(--code-font-size);
     opacity: 1;
     overflow-x: auto;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 .collapsableContentCode.open {
@@ -72,6 +81,13 @@
     width: 100%;
     padding-left: var(--codeText-padding-left);
     font-family: 'Space mono', monospace;
+}
+
+.collapsableContentCode .codeText,
+.collapsableContentCode .codeText * {
+  white-space: pre;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .collapsableContentCode .shell {

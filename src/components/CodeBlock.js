@@ -46,6 +46,7 @@ function CodeBlock({ title, extraText }) {
                                     ) : (
                                         <span className="">{`${text}`}</span>
                                     )}
+                                    
                                 </td>
                             </tr>
                         ))}
