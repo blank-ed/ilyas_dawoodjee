@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ilyas_dawoodjee/static/css/main.54652b3a.css",
+    "main.css": "/ilyas_dawoodjee/static/css/main.9b79c758.css",
     "main.js": "/ilyas_dawoodjee/static/js/main.9fc0e4f2.js",
     "static/media/me.jpg": "/ilyas_dawoodjee/static/media/me.057a66853151859381e5.jpg",
     "static/media/Figure5.png": "/ilyas_dawoodjee/static/media/Figure5.50008c3cf6506e6abbbe.png",
@@ -94,11 +94,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/ilyas_dawoodjee/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/ilyas_dawoodjee/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/ilyas_dawoodjee/index.html",
-    "main.54652b3a.css.map": "/ilyas_dawoodjee/static/css/main.54652b3a.css.map",
+    "main.9b79c758.css.map": "/ilyas_dawoodjee/static/css/main.9b79c758.css.map",
     "main.9fc0e4f2.js.map": "/ilyas_dawoodjee/static/js/main.9fc0e4f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.54652b3a.css",
+    "static/css/main.9b79c758.css",
     "static/js/main.9fc0e4f2.js"
   ]
 }
