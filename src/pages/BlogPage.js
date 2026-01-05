@@ -7,6 +7,7 @@ import 'katex/dist/katex.min.css';
 
 import './BlogPage.css';
 
+import BlogPage3Data from '../website_data/BlogPage3Data/BlogPage3Data';
 import BlogPage1Data from '../website_data/BlogPage1Data/BlogPage1Data';
 import BlogPage2Data from '../website_data/BlogPage2Data/BlogPage2Data';
 import BlogData from '../website_data/BlogData';
@@ -17,7 +18,7 @@ import Collapsable from '../components/Collapsable';
 import CodeBlock from '../components/CodeBlock';
 import TableofContent from '../components/TableofContent';
 
-const blogPages = [BlogPage2Data, BlogPage1Data];
+const blogPages = [BlogPage3Data, BlogPage2Data, BlogPage1Data];
 
 const blogDataMapping = BlogData.reduce((acc, article, index) => {
   const words = article.article_title.split(' ')

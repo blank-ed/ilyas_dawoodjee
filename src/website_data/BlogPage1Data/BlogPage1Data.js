@@ -262,7 +262,7 @@ function CADModelSection() {
     );
 }
 
-const BlogIndex = 1;
+const BlogIndex = 2;
 
 // For Table of Contents
 const tocItems = [

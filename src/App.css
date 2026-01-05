@@ -36,6 +36,8 @@
 
 @media (max-width: 1000px) {
   :root {
+    --main-content-width: 80%;
+
     --mainTitle-font-size: 1.75rem;
     --title-font-size: 1.25rem;
     --subtitle-font-size: 1rem;
@@ -49,6 +51,7 @@
 
 @media (max-width: 700px) {
   :root {
+    --main-content-width: 90%;
     --mainTitle-font-size: 1.25rem;
     --title-font-size: 1rem;
     --subtitle-font-size: 0.85rem;
@@ -62,7 +65,7 @@
 
 @media (max-width: 500px) {
   :root {
-    --main-content-width: 90%;
+    /* --main-content-width: 90%; */
   }
 }
 

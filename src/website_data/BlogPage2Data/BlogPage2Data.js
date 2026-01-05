@@ -524,7 +524,7 @@ function TimeTaken() {
 }
 
 
-const BlogIndex = 0;
+const BlogIndex = 1;
 
 // For Table of Contents
 const tocItems = [
@@ -2029,7 +2029,7 @@ const BlogPage2Data = [
             referencesContent,
 
             // Footer
-            footer_content({ BlogIndex: BlogIndex, previous_link: false, next_link: true })
+            footer_content({ BlogIndex: BlogIndex, previous_link: true, next_link: true })
         ]
     }
 ]

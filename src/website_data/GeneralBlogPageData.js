@@ -3,13 +3,14 @@ import BlogData from './BlogData';
 
 function footer_content({ BlogIndex, previous_link, next_link }) {
     const footerChildren = [];
-    // console.log(BlogData[BlogIndex + 1].article_link);
+    
     if (previous_link) {
         footerChildren.push({
             type: 'span', className: 'body footer_left', data: [
                 { type: 'Link', className: 'blog_links_inverse', to: `${BlogData[BlogIndex - 1].article_link}`, icon: faChevronLeft, position: 'left', data: `${BlogData[BlogIndex - 1].article_title}` }
             ]
         });
+        // console.log(BlogData[BlogIndex + 1].article_link);
     }
 
     if (next_link) {
@@ -18,6 +19,7 @@ function footer_content({ BlogIndex, previous_link, next_link }) {
                 { type: 'Link', className: 'blog_links_inverse', to: `${BlogData[BlogIndex + 1].article_link}`, icon: faChevronRight, position: 'right', data: `${BlogData[BlogIndex + 1].article_title}` }
             ]
         });
+        // console.log(BlogData[BlogIndex - 1].article_link);
     }
 
     return { type: 'span', className: 'blog_footer', data: footerChildren };

@@ -1,12 +1,28 @@
 import PlaceHolderImage from './placeholderimage.jpg'
+
 import Figure1 from './BlogPage1Data/images/Figure1.png'
 import Figure2 from './BlogPage2Data/images/Figure5.png'
 
 const BlogData = [
     {
         BlogIndex: '',
+        image: PlaceHolderImage,
+        article_title: "A Flexible Framework for Design and Validation of rPPG Methods",
+        published_date: "xx xxxx xxxx",
+        folder_name: "Remote PPG",
+        article_abstract: "...",
+        article_link: "/",
+        article_tags: [
+            { tag_name: "Computer Vision" },
+            { tag_name: "Digital Signal Processing" },
+            { tag_name: "Heart Rate Estimation" },
+            { tag_name: "2D Data Processing" },
+        ],
+    },
+    {
+        BlogIndex: '',
         image: Figure2,
-        article_title: "Training custom PointNet++ Classification Model Using Machining Feature Dataset",
+        article_title: "Training Custom PointNet++ Classification Model Using Machining Feature Dataset",
         published_date: "12 December 2025",
         folder_name: "Artificial Intelligence",
         article_abstract: "In my previous blog post, I conducted an in-depth exploration of PointNet++ [1]. I broke down its core principles into intuitive, visual explanations that guided readers (from novice to professionals) through each step of the process. In this part 2 of the blog post, I will guide you through on training a custom PointNet++ model using a machining feature dataset. For further details on the dataset please refer to the relevant section of the previous blog post.",
