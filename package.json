@@ -1,7 +1,7 @@
 {
   "name": "my_website",
   "version": "0.1.0",
-  "homepage": "https://blank_ed.github.io/ilyas_dawoodjee",
+  "homepage": "https://blank-ed.github.io/ilyas_dawoodjee",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
