@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import BlogPage from "./pages/BlogPage";
+import React from 'react';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
     <div className="App">
-      <Router basename="/ilyas_dawoodjee">
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
