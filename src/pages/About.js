@@ -1,5 +1,6 @@
 import React from 'react'
 import './About.css';
+import { Helmet } from 'react-helmet-async';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -15,8 +16,19 @@ import PublicationData from '../website_data/PublicationData';
 
 
 function About() {
+  const aboutPageData = {
+    title: "About | Ilyas Dawoodjee",
+    excerpt: "Ilyas Dawoodjee is an MSc Mechanical Engineering student at University of Manitoba researching computer vision, machine learning, and autonomous self driving robotics at the RAL. View work experience, education, and publications."
+  };
+
   return (
     <div className='About Page'>
+      <Helmet>
+        <title>{aboutPageData.title}</title>
+        <meta name="description" content={aboutPageData.excerpt} />
+        <link rel="canonical" href="https://blank-ed.github.io/ilyas_dawoodjee/about" />
+      </Helmet>
+      
       <NavBar selected="about"></NavBar>
       <div className="About_Container">
         <div className="About_Avatar">
