@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+import { Helmet } from 'react-helmet-async';
 
 import './BlogPage.css';
 
@@ -201,8 +202,22 @@ function BlogPage() {
     }
   }
 
+  const currentArticle = BlogData.find((article) => {
+    const words = article.article_title.split(' ')
+      .map(word => word.replace(/:/g, ''))
+      .filter(word => /^[A-Za-z]+$/.test(word));
+    const id = words.slice(0, 4).join('_').toLowerCase();
+    return id === blogId;
+  });
+
   return (
     <div className='BlogPage Page' ref={pageRef}>
+      <Helmet>
+        <title>{currentArticle?.article_title || 'Blog'} | Ilyas Dawoodjee</title>
+        <meta name="description" content={currentArticle?.article_abstract || currentArticle?.article_summary || ''} />
+        <link rel="canonical" href={`https://blank-ed.github.io/ilyas_dawoodjee/#/blogpage/${blogId}`} />
+      </Helmet>
+
       <NavBar selected='blog'></NavBar>
       <div className="BlogPage_Container">
         {blogData.map(renderData)}

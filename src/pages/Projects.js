@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
+import { Helmet } from 'react-helmet-async';
+
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import BlogData from '../website_data/BlogData';
@@ -9,6 +11,11 @@ import { Link, useLocation } from 'react-router-dom';
 import Select from 'react-select';
 
 function Projects() {
+  const projectsPageData = {
+    title: "Projects | Ilyas Dawoodjee",
+    excerpt: "Portfolio of engineering and software projects spanning robotics, deep learning learning, computer vision, and autonomous systems. Explore implementations in Python, ROS2, and deep learning frameworks."
+  };
+
   const [selectedOptions, setSelectedOptions] = useState([{ label: 'Projects', value: 'projects' }]);
   const [data, setData] = useState([]);
   const [highlightedSection, setHighlightedSection] = useState(null);
@@ -212,6 +219,12 @@ function Projects() {
 
   return (
     <div className='Projects Page'>
+      <Helmet>
+        <title>{projectsPageData.title}</title>
+        <meta name="description" content={projectsPageData.excerpt} />
+        <link rel="canonical" href="https://blank-ed.github.io/ilyas_dawoodjee/#/projects" />
+      </Helmet>
+
       <NavBar selected='projects'></NavBar>
       <div className="Projects_Container">
         <div className="Projects_Title_Section">

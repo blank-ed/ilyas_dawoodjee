@@ -26,9 +26,9 @@ function About() {
       <Helmet>
         <title>{aboutPageData.title}</title>
         <meta name="description" content={aboutPageData.excerpt} />
-        <link rel="canonical" href="https://blank-ed.github.io/ilyas_dawoodjee/about" />
+        <link rel="canonical" href="https://blank-ed.github.io/ilyas_dawoodjee/#/about" />
       </Helmet>
-      
+
       <NavBar selected="about"></NavBar>
       <div className="About_Container">
         <div className="About_Avatar">
